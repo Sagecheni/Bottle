@@ -11,7 +11,7 @@ module light_1 (
 );
 
 always @(posedge CLK) begin
-    if (EN_work == 1'b1 && EN_set == 1'b1) begin    //如果是设置模式，light和light2都为0
+    if (EN_work == 1'b1 && EN_set == 1'b1) begin
         light <= 4'b0000;
         light2 <= 4'b0001;
     end else if (EN_work == 1'b0 && EN_set == 1'b0 && SET == 1'b0) begin

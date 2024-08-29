@@ -18,9 +18,8 @@ module bottle (
     output wire light1_a, light1_b, light1_c, light1_d, light1_e, light1_f, light1_g, // 第1组灯光控制输出（七段显示器）
     
     input wire set_low_D, set_low_C, set_low_B, set_low_A, // 设置低位数据输入
-    input wire set_high_D, set_high_C, set_high_B, set_high_A, // 设置高位数据输入
-    
-    output wire Speaker                      // 扬声器输出信号
+    input wire set_high_D, set_high_C, set_high_B, set_high_A // 设置高位数据输入
+
 );
 
 // 内部信号声明
@@ -41,8 +40,6 @@ wire allFull;                     // 全部瓶子已满信号
 wire [3:0] mode_light1, mode_light2; // 模式灯光显示信号
 wire [3:0] light6, light5, light4, light3, light2; // 各组灯光控制信号
 
-// 音乐生成时钟信号
-wire CLK_2, CLK_3, CLK_4, CLK_5, CLK_6, CLK_7, CLK_8, Mi; // 不同频率的时钟信号
 
 // 组件实例化
 make_fre u1 (.CLK(CLK_org), .CLK_out(CLK)); // 频率生成器
@@ -60,17 +57,7 @@ BCD_7 u9 (.EN(PrintB), .a(light1_a), .b(light1_b), .c(light1_c), .d(light1_d), .
 
 page u11 (.CLK(CLK_org), .EN(mode_EN), .SET(SET), .EN_work(EN_work), .EN_set(EN_set), .print1(PrintB), .max2(Maxh), .max1(Maxl), .ten(bot_max2), .one(bot_max1), .mode1(mode_light1), .mode2(mode_light2), .seqH(bot_seq_H), .seqL(bot_seq_L), .now2(bot_high), .now1(bot_low), .out6(light6), .out5(light5), .out4(light4), .out3(light3), .out2(light2)); // 页面显示控制
 
-// 生成多个频率的时钟信号，用于音乐生成
-make_fre u12 (.CLK(CLK_Music), .CLK_out(CLK_2));
-make_fre u13 (.CLK(CLK_2), .CLK_out(CLK_3));
-make_fre u14 (.CLK(CLK_3), .CLK_out(CLK_4));
-make_fre u15 (.CLK(CLK_4), .CLK_out(CLK_5));
-make_fre u16 (.CLK(CLK_5), .CLK_out(CLK_6));
-make_fre u17 (.CLK(CLK_6), .CLK_out(CLK_7));
-make_fre u19 (.CLK(CLK_7), .CLK_out(CLK_8));
-make_fre u20 (.CLK(CLK_8), .CLK_out(Mi));
 
-Music u30 (.CLK(CLK_org), .CLK_1(Mi), .allFull(allFull), .Music(Speaker)); // 音乐生成
 
 // 输出灯光信号映射
 assign light6_D = light6[3]; assign light6_C = light6[2]; assign light6_B = light6[1]; assign light6_A = light6[0];

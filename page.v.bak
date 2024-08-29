@@ -43,7 +43,7 @@ module page (
                     Y5 <= max2;Y4 <= max1;Y3 <= 4'b1111;Y2 <= 4'b1111;
                 end else begin
                     Y5 <= 4'b1111;Y4 <= 4'b1111;Y3 <= max2;Y2 <= max1;
-                end//123
+                end
             end else begin
             // 正常显示状态
             Y5 <= max2;  // 显示最大值的十位
