@@ -45,11 +45,21 @@ Failed Paths   : 0
 Type           : Clock Setup: 'CLK_org'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 26.32 MHz ( period = 38.000 ns )
-From           : set_MAX:u4|maxH[2]
-To             : full:u6|start_seq_L[3]
+Actual Time    : 25.64 MHz ( period = 39.000 ns )
+From           : set_MAX:u4|maxL[0]
+To             : MOD_MAX:u5|tens[3]
 From Clock     : CLK_org
 To Clock       : CLK_org
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK_Music'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 47.62 MHz ( period = 21.000 ns )
+From           : Music:u12|lpm_counter:counter_rtl_1|dffs[6]
+To             : Music:u12|Music
+From Clock     : CLK_Music
+To Clock       : CLK_Music
 Failed Paths   : 0
 
 Type           : Total number of failed paths

@@ -27,7 +27,6 @@ module MOD_MAX (
             if (!EN_work && !EN_set) begin
                 // 如果药瓶未满且未停止计数，继续计数
                 if (!allFull && !stop) begin
-                    // 如果当前计数达到最大值，复位计数器并根据 set 信号停止计数
                     if (ones == maxL - 1 && tens == maxH || ones == 9 && maxL == 0 && tens == maxH - 1) begin
                         ones <= 4'b0000;
                         tens <= 4'b0000;

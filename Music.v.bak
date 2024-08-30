@@ -2,22 +2,20 @@ module Music (
     input wire CLK,        // 主时钟信号
     input wire CLK_1,      // 音频时钟信号
     input wire allFull,    // 全满信号
-    output reg Music       // 输出警报信号
+    output reg SPEAKER       // 输出警报信号
 );
 
-    reg [1:0] state;  // 用于控制交替输出的状态
+    reg [7:0] counter;     // 8位计数器，计数至151
 
     always @(posedge CLK) begin
-        if (allFull) begin
-            state <= state + 1;  // 每次时钟周期更新状态
-            if (state == 2'b00 || state == 2'b10) begin
-                Music <= CLK_1;  // 输出警报音频
-            end else begin
-                Music <= 1'b0;   // 输出无效音频
+        if (1) begin
+            counter <= counter + 1;
+            if (counter >= 152) begin  // 100 kHz / 152 ≈ 657.89 Hz
+                counter <= 0;
+                SPEAKER <= ~SPEAKER;  // 翻转输出，产生方波
             end
         end else begin
-            Music <= 1'b0;  // 当 allFull 无效时，保持 Music 为低电平
-            state <= 2'b00;  // 重置状态
+            SPEAKER <= 0;  // 当 ENABLE 为低时，关闭扬声器输出
         end
     end
 

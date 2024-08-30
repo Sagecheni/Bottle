@@ -1,23 +1,32 @@
 module Music (
-    input wire CLK,        // 主时钟信号
-    input wire CLK_1,      // 音频时钟信号
+    input wire CLK,        // 主时钟信号 (1 Hz)
+    input wire CLK_1,      // 音频时钟信号 (假设为 100 kHz)
     input wire allFull,    // 全满信号
     output reg Music       // 输出警报信号
 );
 
-    reg [1:0] state;  // 用于控制交替输出的状态
+    reg [7:0] counter;      // 8位计数器，用于生成音频信号
+    reg enable_audio;       // 控制音频启停的标志
 
+    // 使用 1 Hz 的 CLK 信号控制音频的启停
     always @(posedge CLK) begin
         if (allFull) begin
-            state <= state + 1;  // 每次时钟周期更新状态
-            if (state == 2'b00 || state == 2'b10) begin
-                Music <= CLK_1;  // 输出警报音频
-            end else begin
-                Music <= 1'b0;   // 输出无效音频
+            enable_audio <= ~enable_audio;  // 每秒翻转一次，控制启停
+        end else begin
+            enable_audio <= 0;  // 如果 allFull 为低，关闭音频
+        end
+    end
+
+    // 使用较高频率的 CLK_1 生成音频信号
+    always @(posedge CLK_1) begin
+        if (allFull && enable_audio) begin
+            counter <= counter + 1;
+            if (counter >= 152) begin  // 100 kHz / 152 ≈ 657.89 Hz
+                counter <= 0;
+                Music <= ~Music;  // 翻转输出，产生方波
             end
         end else begin
-            Music <= 1'b0;  // 当 allFull 无效时，保持 Music 为低电平
-            state <= 2'b00;  // 重置状态
+            Music <= 0;
         end
     end
 

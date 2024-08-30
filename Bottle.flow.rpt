@@ -1,5 +1,5 @@
 Flow report for Bottle
-Thu Aug 29 20:54:34 2024
+Fri Aug 30 13:06:41 2024
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------+
 ; Flow Summary                                                       ;
 +-------------------------+------------------------------------------+
-; Flow Status             ; Successful - Thu Aug 29 20:54:34 2024    ;
+; Flow Status             ; Successful - Fri Aug 30 13:06:41 2024    ;
 ; Quartus II Version      ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name           ; Bottle                                   ;
 ; Top-level Entity Name   ; Bottle                                   ;
@@ -46,7 +46,7 @@ applicable agreement for further details.
 ; Device                  ; EPM7128SLC84-15                          ;
 ; Timing Models           ; Final                                    ;
 ; Met timing requirements ; Yes                                      ;
-; Total macrocells        ; 112 / 128 ( 88 % )                       ;
+; Total macrocells        ; 118 / 128 ( 92 % )                       ;
 ; Total pins              ; 49 / 68 ( 72 % )                         ;
 +-------------------------+------------------------------------------+
 
@@ -56,31 +56,32 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/29/2024 20:54:30 ;
+; Start date & time ; 08/30/2024 13:06:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Bottle              ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                    ;
-+------------------------------------+---------------------------------+---------------+-------------+----------------+
-; Assignment Name                    ; Value                           ; Default Value ; Entity Name ; Section Id     ;
-+------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 171720527419477.172493607025748 ; --            ; --          ; --             ;
-; FITTER_EFFORT                      ; Standard Fit                    ; Auto Fit      ; --          ; --             ;
-; MAX7000_OPTIMIZATION_TECHNIQUE     ; Area                            ; Speed         ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP             ; 85                              ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP             ; 0                               ; --            ; --          ; --             ;
-; MISC_FILE                          ; F:/Bottle/Bottle.dpf            ; --            ; --          ; --             ;
-; MISC_FILE                          ; D:/04Document/Bottle/Bottle.dpf ; --            ; --          ; --             ;
-; OPTIMIZE_HOLD_TIMING               ; Off                             ; --            ; --          ; --             ;
-; SMART_RECOMPILE                    ; On                              ; Off           ; --          ; --             ;
-; SYNTH_TIMING_DRIVEN_SYNTHESIS      ; Off                             ; --            ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --            ; --          ; eda_blast_fpga ;
-; VERILOG_INPUT_VERSION              ; SystemVerilog_2005              ; Verilog_2001  ; --          ; --             ;
-; VERILOG_SHOW_LMF_MAPPING_MESSAGES  ; Off                             ; --            ; --          ; --             ;
-+------------------------------------+---------------------------------+---------------+-------------+----------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                         ;
++------------------------------------+----------------------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                    ; Value                                                                ; Default Value ; Entity Name ; Section Id     ;
++------------------------------------+----------------------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 96830616957537.172499439428080                                       ; --            ; --          ; --             ;
+; FITTER_EFFORT                      ; Standard Fit                                                         ; Auto Fit      ; --          ; --             ;
+; MAX7000_OPTIMIZATION_TECHNIQUE     ; Area                                                                 ; Speed         ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP             ; 85                                                                   ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP             ; 0                                                                    ; --            ; --          ; --             ;
+; MISC_FILE                          ; F:/Bottle/Bottle.dpf                                                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; D:/04Document/Bottle/Bottle.dpf                                      ; --            ; --          ; --             ;
+; MISC_FILE                          ; \\wsl.localhost\Debian\home\sa1ge\Document\00Inbox\Bottle\Bottle.dpf ; --            ; --          ; --             ;
+; OPTIMIZE_HOLD_TIMING               ; Off                                                                  ; --            ; --          ; --             ;
+; SMART_RECOMPILE                    ; On                                                                   ; Off           ; --          ; --             ;
+; SYNTH_TIMING_DRIVEN_SYNTHESIS      ; Off                                                                  ; --            ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                                                  ; --            ; --          ; eda_blast_fpga ;
+; VERILOG_INPUT_VERSION              ; SystemVerilog_2005                                                   ; Verilog_2001  ; --          ; --             ;
+; VERILOG_SHOW_LMF_MAPPING_MESSAGES  ; Off                                                                  ; --            ; --          ; --             ;
++------------------------------------+----------------------------------------------------------------------+---------------+-------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -88,11 +89,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 225 MB              ; 00:00:01                           ;
-; Fitter                  ; 00:00:00     ; 1.0                     ; 212 MB              ; 00:00:00                           ;
+; Analysis & Synthesis    ; 00:00:05     ; 1.0                     ; 235 MB              ; 00:00:01                           ;
+; Fitter                  ; 00:00:01     ; 1.0                     ; 212 MB              ; 00:00:00                           ;
 ; Assembler               ; 00:00:00     ; 1.0                     ; 199 MB              ; 00:00:00                           ;
 ; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 170 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:01     ; --                      ; --                  ; 00:00:01                           ;
+; Total                   ; 00:00:06     ; --                      ; --                  ; 00:00:01                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -101,10 +102,10 @@ applicable agreement for further details.
 +-------------------------+------------------+---------------+------------+----------------+
 ; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; LAPTOP-IR64NN4M  ; Windows Vista ; 6.2        ; x86_64         ;
-; Fitter                  ; LAPTOP-IR64NN4M  ; Windows Vista ; 6.2        ; x86_64         ;
-; Assembler               ; LAPTOP-IR64NN4M  ; Windows Vista ; 6.2        ; x86_64         ;
-; Classic Timing Analyzer ; LAPTOP-IR64NN4M  ; Windows Vista ; 6.2        ; x86_64         ;
+; Analysis & Synthesis    ; Kiko             ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                  ; Kiko             ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler               ; Kiko             ; Windows Vista ; 6.2        ; x86_64         ;
+; Classic Timing Analyzer ; Kiko             ; Windows Vista ; 6.2        ; x86_64         ;
 +-------------------------+------------------+---------------+------------+----------------+
 
 
