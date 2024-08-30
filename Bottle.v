@@ -25,8 +25,7 @@ module Bottle (
 
 // 内部信号声明
 wire CLK;                         // 生成的时钟信号
-wire maxA, maxB, botA, botB;      // 最大值和底部状态信号
-
+wire maxA, maxB, botA, botB;      // 最大值和底部状态信号                      // 停止计数信号
 // 设置输入信号组合成4位信号
 wire [3:0] Cinl = {set_low_D, set_low_C, set_low_B, set_low_A}; // 低位输入组合信号
 wire [3:0] Cinh = {set_high_D, set_high_C, set_high_B, set_high_A}; // 高位输入组合信号
@@ -44,18 +43,18 @@ wire [3:0] light6, light5, light4, light3, light2; // 各组灯光控制信号
 
 // 组件实例化
 make_fre u1 (.CLK(CLK_org), .CLK_out(CLK)); // 频率生成器
+
 Decoder_2to4 u2 (.inB(SET), .inA(SET), .outD(botA), .outC(botB), .outB(maxA), .outA(maxB)); // 解码器
 
 set_MAX u3 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(maxA & maxB), .setL(Cinl), .setH(Cinh), .maxL(bot_max1), .maxH(bot_max2)); // 最大值设置
 set_MAX u4 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(botA & botB), .setL(Cinl), .setH(Cinh), .maxL(Maxl), .maxH(Maxh)); // 另一组最大值设置
 
 MOD_MAX u5 (.CLK(CLK), .isWork(isWork), .conti(conti), .allFull(allFull), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .maxL(Maxl), .maxH(Maxh), .outL(bot_low), .outH(bot_high)); // 管理当前数量与最大值
-full u6 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .isWork(isWork), .maxL(Maxl), .maxH(Maxh), .nowL(bot_low), .nowH(bot_high), .seqL(bot_seq_L), .seqH(bot_seq_H)); // 检查瓶子是否已满
+full u6 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .isWork(isWork),.allFull(allFull), .maxL(Maxl), .maxH(Maxh), .nowL(bot_low), .nowH(bot_high), .seqL(bot_seq_L), .seqH(bot_seq_H)); // 检查瓶子是否已满
 all_slice u7 (.CLK(CLK), .isWork(isWork), .bot_seq_L(bot_seq_L), .bot_seq_H(bot_seq_H), .bot_maxL(bot_max1), .bot_maxH(bot_max2), .allFull(allFull)); // 检查所有瓶子是否已满
 
 light_1 u8 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .SET(SET), .allFull(allFull), .light(mode_light1), .light2(mode_light2)); // 灯光控制
 BCD_7 u9 (.EN(PrintB), .a(light1_a), .b(light1_b), .c(light1_c), .d(light1_d), .e(light1_e), .f(light1_f), .g(light1_g)); // 七段显示控制
-
 page u11 (.CLK(CLK_org), .EN(mode_EN), .SET(SET), .EN_work(EN_work), .EN_set(EN_set), .print1(PrintB), .max2(Maxh), .max1(Maxl), .ten(bot_max2), .one(bot_max1), .mode1(mode_light1), .mode2(mode_light2), .seqH(bot_seq_H), .seqL(bot_seq_L), .now2(bot_high), .now1(bot_low), .out6(light6), .out5(light5), .out4(light4), .out3(light3), .out2(light2)); // 页面显示控制
 
 Music u12 (.CLK(CLK_org), .CLK_1(CLK_Music), .allFull(allFull), .Music(Speaker));

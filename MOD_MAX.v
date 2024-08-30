@@ -14,36 +14,31 @@ module MOD_MAX (
 );
 
     reg [3:0] ones, tens;     // ones: 当前计数的个位部分, tens: 当前计数的十位部分
-    reg stop;                 // stop: 停止计数信号，高电平表示停止计数
 
     always @(posedge CLK) begin
-        // 当 EN_work 和 EN_set 高电平且 set 低电平时复位计数器
         if (EN_work && EN_set && !set) begin
+            // 复位计数器
             ones <= 4'b0000;
             tens <= 4'b0000;
-            stop <= 0;
-        end else if (isWork) begin
-            // 在工作状态下，当 EN_work 和 EN_set 都低电平时进行计数
+        end else if (isWork && !allFull) begin
+            // 在工作状态下，且全满信号为低时进行计数
             if (!EN_work && !EN_set) begin
-                // 如果药瓶未满且未停止计数，继续计数
-                if (!allFull && !stop) begin
-                    if (ones == maxL - 1 && tens == maxH || ones == 9 && maxL == 0 && tens == maxH - 1) begin
-                        ones <= 4'b0000;
-                        tens <= 4'b0000;
-                        stop <= set ? 1 : 0;
-                    end else if (ones == 4'b1001) begin
-                        // 如果个位数达到9，个位数复位，十位数加1
-                        ones <= 4'b0000;
-                        tens <= tens + 1;
-                    end else begin
-                        // 否则，个位数加1
-                        ones <= ones + 1;
-                    end
-                end else if (conti) begin
-                    // 如果 conti 信号高电平，继续计数
-                    stop <= 0;
+                if (ones == 4'b1001) begin
+                    // 如果个位数达到9，个位数复位，十位数加1
+                    ones <= 4'b0000;
+                    tens <= tens + 1;
+                end else if ((ones == maxL - 1 && tens == maxH) || (ones == 9 && maxL == 0 && tens == maxH - 1)) begin
+                    // 达到最大值时，复位计数器
+                    ones <= 4'b0000;
+                    tens <= 4'b0000;
+                end else begin
+                    // 正常计数
+                    ones <= ones + 1;
                 end
             end
+        end else if (conti) begin
+            // 如果 conti 信号高电平，继续计数
+            ones <= ones + 1;
         end
         // 将当前计数输出
         outL <= ones;
