@@ -116,7 +116,7 @@ light1_d                     : 48        : output : TTL               :         
 light1_e                     : 49        : output : TTL               :         :           : Y              
 light1_f                     : 50        : output : TTL               :         :           : Y              
 light1_g                     : 51        : output : TTL               :         :           : Y              
-RESERVED                     : 52        :        :                   :         :           :                
+Speaker                      : 52        : output : TTL               :         :           : Y              
 VCCIO                        : 53        : power  :                   : 5.0V    :           :                
 EN_work                      : 54        : input  : TTL               :         :           : Y              
 RESERVED                     : 55        :        :                   :         :           :                

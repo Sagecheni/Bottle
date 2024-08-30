@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for Bottle
-Thu Aug 29 17:20:48 2024
+Thu Aug 29 20:54:34 2024
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -39,18 +39,18 @@ applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                                                                     ;
-+------------------------------+-------+---------------+----------------------------------+----------------------+---------------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time                      ; From                 ; To                  ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+----------------------------------+----------------------+---------------------+------------+----------+--------------+
-; Worst-case tsu               ; N/A   ; None          ; 8.000 ns                         ; EN_set               ; MOD_MAX:u5|ones[3]  ; --         ; CLK_org  ; 0            ;
-; Worst-case tco               ; N/A   ; None          ; 33.000 ns                        ; light_1:u8|light2[3] ; light6_D            ; CLK_org    ; --       ; 0            ;
-; Worst-case tpd               ; N/A   ; None          ; 15.000 ns                        ; mode_EN              ; light6_D            ; --         ; --       ; 0            ;
-; Worst-case th                ; N/A   ; None          ; 13.000 ns                        ; EN_set               ; light_1:u8|light[0] ; --         ; CLK_org  ; 0            ;
-; Clock Setup: 'CLK_org'       ; N/A   ; None          ; 38.46 MHz ( period = 26.000 ns ) ; set_MAX:u4|maxH[2]   ; MOD_MAX:u5|ones[3]  ; CLK_org    ; CLK_org  ; 0            ;
-; Total number of failed paths ;       ;               ;                                  ;                      ;                     ;            ;          ; 0            ;
-+------------------------------+-------+---------------+----------------------------------+----------------------+---------------------+------------+----------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                        ;
++------------------------------+-------+---------------+----------------------------------+----------------------+------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                 ; To                     ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+----------------------+------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 4.000 ns                         ; isWork               ; all_slice:u7|allFull   ; --         ; CLK_org  ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 33.000 ns                        ; light_1:u8|light2[3] ; light6_D               ; CLK_org    ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 15.000 ns                        ; mode_EN              ; light6_D               ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 13.000 ns                        ; EN_set               ; light_1:u8|light[0]    ; --         ; CLK_org  ; 0            ;
+; Clock Setup: 'CLK_org'       ; N/A   ; None          ; 26.32 MHz ( period = 38.000 ns ) ; set_MAX:u4|maxH[2]   ; full:u6|start_seq_L[3] ; CLK_org    ; CLK_org  ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                      ;                        ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+----------------------+------------------------+------------+----------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -113,213 +113,213 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clock Setup: 'CLK_org'                                                                                                                                                                                                                                                           ;
-+-----------------------------------------+-----------------------------------------------------+----------------------+-----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; Slack                                   ; Actual fmax (period)                                ; From                 ; To                                            ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
-+-----------------------------------------+-----------------------------------------------------+----------------------+-----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; N/A                                     ; 38.46 MHz ( period = 26.000 ns )                    ; all_slice:u7|allFull ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 21.000 ns               ;
-; N/A                                     ; 38.46 MHz ( period = 26.000 ns )                    ; MOD_MAX:u5|tens[2]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 21.000 ns               ;
-; N/A                                     ; 38.46 MHz ( period = 26.000 ns )                    ; MOD_MAX:u5|stop      ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 21.000 ns               ;
-; N/A                                     ; 38.46 MHz ( period = 26.000 ns )                    ; set_MAX:u4|maxH[2]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 21.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; all_slice:u7|allFull ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|tens[2]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|stop      ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxH[2]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; all_slice:u7|allFull ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|tens[2]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|stop      ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxH[2]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; all_slice:u7|allFull ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|tens[2]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|stop      ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxH[2]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; all_slice:u7|allFull ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|tens[2]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|stop      ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxH[2]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; all_slice:u7|allFull ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|tens[2]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|stop      ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxH[2]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; all_slice:u7|allFull ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|tens[2]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|stop      ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxH[2]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; all_slice:u7|allFull ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|tens[2]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|stop      ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxH[2]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxL[2]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|ones[2]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|ones[3]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxL[3]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[2]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[2]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[3]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[3]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[2]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[2]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[3]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[3]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[2]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[2]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[3]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[3]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[2]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[2]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[3]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[3]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[2]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[2]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[3]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[3]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[2]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[2]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[3]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[3]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[2]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[2]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[3]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[3]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|tens[1]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|tens[0]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|ones[0]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxH[0]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxH[1]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[0]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[0]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[3]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outL[3]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outL[0]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u3|maxL[0]   ; all_slice:u7|allFull                          ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; full:u6|seqL[0]      ; all_slice:u7|allFull                          ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u3|maxL[3]   ; all_slice:u7|allFull                          ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; full:u6|seqL[3]      ; all_slice:u7|allFull                          ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u3|maxH[2]   ; all_slice:u7|allFull                          ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; full:u6|seqH[2]      ; all_slice:u7|allFull                          ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u3|maxH[0]   ; all_slice:u7|allFull                          ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; full:u6|seqH[0]      ; all_slice:u7|allFull                          ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[1]   ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[3]   ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outH[0]   ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[1]   ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[3]   ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[0]   ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[1]   ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[3]   ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outH[0]   ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[1]   ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[3]   ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[0]   ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[1]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[0]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|ones[0]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[1]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[1]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[0]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|ones[0]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[1]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[1]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[0]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|ones[0]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[1]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[1]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[0]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|ones[0]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[1]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[1]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[0]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|ones[0]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[1]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[2]   ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[1]   ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|ones[0]   ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[2]   ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|ones[2]   ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[1]   ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[2]   ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[1]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[0]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|ones[0]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[1]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[1]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[0]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|ones[0]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[1]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|ones[1]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[3]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|tens[3]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[1]   ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[1]   ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[3]   ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outH[0]   ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[1]   ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[3]   ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[0]   ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[3]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[1]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[1]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outH[0]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[1]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outH[3]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outH[1]   ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[1]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[3]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outH[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[1]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[3]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[1]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[3]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outH[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[1]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[3]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[1]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[3]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outH[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[1]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[3]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxH[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[1]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; set_MAX:u4|maxL[3]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outH[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[1]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[3]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; N/A                                     ; 43.48 MHz ( period = 23.000 ns )                    ; MOD_MAX:u5|outL[0]   ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 18.000 ns               ;
-; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                      ;                                               ;            ;          ;                             ;                           ;                         ;
-+-----------------------------------------+-----------------------------------------------------+----------------------+-----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLK_org'                                                                                                                                                                                                                                                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------+-----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From               ; To                                            ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------+-----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 26.32 MHz ( period = 38.000 ns )                    ; set_MAX:u4|maxH[1] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 26.32 MHz ( period = 38.000 ns )                    ; set_MAX:u4|maxH[3] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 26.32 MHz ( period = 38.000 ns )                    ; set_MAX:u4|maxH[2] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[3] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[1] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; set_MAX:u4|maxL[3] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[3] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[1] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; set_MAX:u4|maxL[3] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[3] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[1] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; set_MAX:u4|maxL[3] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[3] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[1] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; set_MAX:u4|maxL[3] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[3] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[1] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; set_MAX:u4|maxL[3] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[3] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[1] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; set_MAX:u4|maxL[3] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[3] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[1] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; set_MAX:u4|maxL[3] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[3] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[1] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; set_MAX:u4|maxL[3] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[3] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; MOD_MAX:u5|ones[1] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 29.41 MHz ( period = 34.000 ns )                    ; set_MAX:u4|maxL[3] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 29.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; MOD_MAX:u5|ones[2] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[1] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[2] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[0] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; MOD_MAX:u5|ones[2] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[1] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[2] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[0] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; MOD_MAX:u5|ones[2] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[1] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[2] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[0] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; MOD_MAX:u5|ones[2] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[1] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[2] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[0] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; MOD_MAX:u5|ones[2] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[1] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[2] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[0] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; MOD_MAX:u5|ones[2] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[1] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[2] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[0] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; MOD_MAX:u5|ones[2] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[1] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[2] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[0] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; MOD_MAX:u5|ones[2] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[1] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[2] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[0] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; MOD_MAX:u5|ones[2] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[1] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[2] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 30.30 MHz ( period = 33.000 ns )                    ; set_MAX:u4|maxL[0] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 28.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[2] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[0] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|ones[0] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[0] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[3] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[3] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[2] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[2] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[0] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|ones[0] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[0] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[3] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[3] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[2] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[2] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[0] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|ones[0] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[0] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[3] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[3] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[2] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[2] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[0] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|ones[0] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[0] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[3] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[3] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[2] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[2] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[0] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|ones[0] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[0] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[3] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[3] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[2] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[2] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[0] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|ones[0] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[0] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[3] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[3] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[2] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[2] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[0] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|ones[0] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[0] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[3] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[3] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[2] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[2] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[0] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|ones[0] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[0] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[3] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[3] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[2] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[2] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[0] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|ones[0] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[0] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|tens[3] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[3] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[2] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|outH[2] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxH[0] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; set_MAX:u4|maxL[0] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|outH[3] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|outL[0] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 31.25 MHz ( period = 32.000 ns )                    ; MOD_MAX:u5|outH[1] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 27.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|tens[1] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[1] ; MOD_MAX:u5|tens[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|tens[1] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[1] ; MOD_MAX:u5|tens[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|tens[1] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[1] ; MOD_MAX:u5|tens[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|tens[1] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[1] ; MOD_MAX:u5|ones[2]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|tens[1] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[1] ; MOD_MAX:u5|ones[0]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|tens[1] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[1] ; MOD_MAX:u5|stop                               ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|tens[1] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[1] ; MOD_MAX:u5|ones[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|tens[1] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[1] ; MOD_MAX:u5|ones[1]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|tens[1] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[1] ; MOD_MAX:u5|tens[3]                            ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[1] ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[3] ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxH[2] ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxL[3] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxL[1] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; set_MAX:u4|maxL[2] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|outL[2] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|outL[3] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 32.26 MHz ( period = 31.000 ns )                    ; MOD_MAX:u5|outL[1] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 26.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[1] ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[3] ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[2] ; full:u6|start_seq_L[2]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[1] ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[3] ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[2] ; full:u6|start_seq_L[0]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; MOD_MAX:u5|outH[0] ; full:u6|start_seq_L[3]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[1] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[3] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[2] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[1] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[3] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[2] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[1] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[3] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[2] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[1] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[3] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 33.33 MHz ( period = 30.000 ns )                    ; set_MAX:u4|maxH[2] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 25.000 ns               ;
+; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|outH[2] ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxH[0] ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; set_MAX:u4|maxL[0] ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|outH[3] ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|outL[0] ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 40.00 MHz ( period = 25.000 ns )                    ; MOD_MAX:u5|outH[1] ; full:u6|start_seq_L[1]                        ; CLK_org    ; CLK_org  ; None                        ; None                      ; 20.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outL[0] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outH[1] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outH[2] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxH[0] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[0] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outH[3] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outL[0] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outH[1] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outH[2] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxH[0] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; set_MAX:u4|maxL[0] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outH[3] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; N/A                                     ; 41.67 MHz ( period = 24.000 ns )                    ; MOD_MAX:u5|outL[0] ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org    ; CLK_org  ; None                        ; None                      ; 19.000 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                    ;                                               ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------+-----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -327,97 +327,75 @@ applicable agreement for further details.
 +-------+--------------+------------+------------+-----------------------------------------------+----------+
 ; Slack ; Required tsu ; Actual tsu ; From       ; To                                            ; To Clock ;
 +-------+--------------+------------+------------+-----------------------------------------------+----------+
-; N/A   ; None         ; 8.000 ns   ; isWork     ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
-; N/A   ; None         ; 8.000 ns   ; EN_work    ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
-; N/A   ; None         ; 8.000 ns   ; EN_set     ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; isWork     ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; isWork     ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; isWork     ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; isWork     ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; isWork     ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; isWork     ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; isWork     ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_work    ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_work    ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_work    ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_work    ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_work    ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_work    ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_work    ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_set     ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_set     ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_set     ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_set     ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_set     ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_set     ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
-; N/A   ; None         ; 7.000 ns   ; EN_set     ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
-; N/A   ; None         ; 6.000 ns   ; isWork     ; full:u6|start_seq_L[3]                        ; CLK_org  ;
-; N/A   ; None         ; 6.000 ns   ; SET        ; full:u6|start_seq_L[3]                        ; CLK_org  ;
-; N/A   ; None         ; 6.000 ns   ; EN_work    ; full:u6|start_seq_L[3]                        ; CLK_org  ;
-; N/A   ; None         ; 6.000 ns   ; EN_set     ; full:u6|start_seq_L[3]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; isWork     ; full:u6|start_seq_L[2]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; isWork     ; full:u6|start_seq_L[0]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; isWork     ; full:u6|start_seq_L[1]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; SET        ; full:u6|start_seq_L[2]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; SET        ; full:u6|start_seq_L[0]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; SET        ; full:u6|start_seq_L[1]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; SET        ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; SET        ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; SET        ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; SET        ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_work    ; full:u6|start_seq_L[2]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_work    ; full:u6|start_seq_L[0]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_work    ; full:u6|start_seq_L[1]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_work    ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_work    ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_work    ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_work    ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_set     ; full:u6|start_seq_L[2]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_set     ; full:u6|start_seq_L[0]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_set     ; full:u6|start_seq_L[1]                        ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_set     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_set     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_set     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org  ;
-; N/A   ; None         ; 5.000 ns   ; EN_set     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org  ;
+; N/A   ; None         ; 4.000 ns   ; CLK_Music  ; Music:u12|Music                               ; CLK_org  ;
 ; N/A   ; None         ; 4.000 ns   ; isWork     ; all_slice:u7|allFull                          ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; conti      ; MOD_MAX:u5|stop                               ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; isWork     ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; isWork     ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; isWork     ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; isWork     ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; isWork     ; MOD_MAX:u5|stop                               ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; isWork     ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; isWork     ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; isWork     ; full:u6|start_seq_L[3]                        ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; SET        ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; SET        ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; SET        ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; SET        ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; SET        ; MOD_MAX:u5|stop                               ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; SET        ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; SET        ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; SET        ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
-; N/A   ; None         ; 3.000 ns   ; SET        ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; SET        ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; SET        ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; SET        ; full:u6|start_seq_L[3]                        ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; SET        ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; SET        ; set_MAX:u3|maxH[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_work    ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_work    ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_work    ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_work    ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_work    ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_work    ; MOD_MAX:u5|stop                               ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_work    ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_work    ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; EN_work    ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_work    ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; EN_work    ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_work    ; full:u6|start_seq_L[3]                        ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; EN_work    ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; EN_work    ; set_MAX:u3|maxH[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_set     ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_set     ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_set     ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_set     ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_set     ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_set     ; MOD_MAX:u5|stop                               ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_set     ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_set     ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; EN_set     ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_set     ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; EN_set     ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
+; N/A   ; None         ; 3.000 ns   ; EN_set     ; full:u6|start_seq_L[3]                        ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; EN_set     ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
 ; N/A   ; None         ; 3.000 ns   ; EN_set     ; set_MAX:u3|maxH[0]                            ; CLK_org  ;
-; N/A   ; None         ; -4.000 ns  ; SET        ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; conti      ; MOD_MAX:u5|stop                               ; CLK_org  ;
+; N/A   ; None         ; -4.000 ns  ; isWork     ; full:u6|start_seq_L[1]                        ; CLK_org  ;
+; N/A   ; None         ; -4.000 ns  ; EN_work    ; full:u6|start_seq_L[1]                        ; CLK_org  ;
+; N/A   ; None         ; -4.000 ns  ; EN_set     ; full:u6|start_seq_L[1]                        ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_low_A  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_low_A  ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; set_low_B  ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; set_low_B  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; set_low_B  ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; set_low_B  ; set_MAX:u3|maxL[1]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_low_C  ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_low_C  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_low_C  ; set_MAX:u3|maxL[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_low_C  ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; set_low_D  ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; set_low_D  ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; set_low_D  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; set_low_B  ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; set_low_B  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; set_low_B  ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; set_low_B  ; set_MAX:u3|maxL[1]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_low_D  ; set_MAX:u4|maxL[3]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; set_low_D  ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; set_low_D  ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; set_low_D  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_low_D  ; set_MAX:u3|maxL[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_low_D  ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_low_D  ; set_MAX:u3|maxL[1]                            ; CLK_org  ;
@@ -433,42 +411,60 @@ applicable agreement for further details.
 ; N/A   ; None         ; -5.000 ns  ; set_high_B ; set_MAX:u3|maxH[1]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_high_B ; set_MAX:u3|maxH[0]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_high_D ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; set_high_D ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_high_D ; set_MAX:u4|maxH[1]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; set_high_D ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_high_D ; set_MAX:u4|maxH[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_high_D ; set_MAX:u3|maxH[3]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_high_D ; set_MAX:u3|maxH[1]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_high_D ; set_MAX:u3|maxH[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; set_high_D ; set_MAX:u3|maxH[0]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; isWork     ; MOD_MAX:u5|stop                               ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; isWork     ; full:u6|start_seq_L[2]                        ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; isWork     ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; isWork     ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; isWork     ; full:u6|start_seq_L[0]                        ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; SET        ; full:u6|start_seq_L[2]                        ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; SET        ; MOD_MAX:u5|stop                               ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u4|maxH[1]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u4|maxL[3]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u4|maxH[2]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; SET        ; full:u6|start_seq_L[0]                        ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; SET        ; full:u6|start_seq_L[1]                        ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u3|maxL[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u3|maxL[1]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u3|maxL[3]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u3|maxH[3]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; SET        ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; SET        ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; SET        ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; SET        ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u3|maxH[1]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; set_MAX:u3|maxH[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; light_1:u8|light[1]                           ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; SET        ; light_1:u8|light[0]                           ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; light_1:u8|light2[3]                          ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; EN_work    ; MOD_MAX:u5|stop                               ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_work    ; full:u6|start_seq_L[2]                        ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u4|maxH[1]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u4|maxL[3]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u4|maxH[2]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_work    ; full:u6|start_seq_L[0]                        ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u3|maxL[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u3|maxL[1]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u3|maxL[3]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u3|maxH[3]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_work    ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_work    ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_work    ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_work    ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u3|maxH[1]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; set_MAX:u3|maxH[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; light_1:u8|light2[2]                          ; CLK_org  ;
@@ -478,17 +474,22 @@ applicable agreement for further details.
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; light_1:u8|light2[0]                          ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_work    ; light_1:u8|light[0]                           ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; light_1:u8|light2[3]                          ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; EN_set     ; MOD_MAX:u5|stop                               ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_set     ; full:u6|start_seq_L[2]                        ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u4|maxH[1]                            ; CLK_org  ;
-; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u4|maxL[3]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u4|maxH[2]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_set     ; full:u6|start_seq_L[0]                        ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u3|maxL[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u3|maxL[1]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u3|maxL[3]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u3|maxH[3]                            ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_set     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_set     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_set     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org  ;
+; N/A   ; None         ; -5.000 ns  ; EN_set     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u3|maxH[1]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; set_MAX:u3|maxH[2]                            ; CLK_org  ;
 ; N/A   ; None         ; -5.000 ns  ; EN_set     ; light_1:u8|light2[2]                          ; CLK_org  ;
@@ -552,6 +553,7 @@ applicable agreement for further details.
 ; N/A   ; None         ; 33.000 ns  ; light_1:u8|light2[2] ; light6_C ; CLK_org    ;
 ; N/A   ; None         ; 33.000 ns  ; light_1:u8|light[2]  ; light6_C ; CLK_org    ;
 ; N/A   ; None         ; 33.000 ns  ; light_1:u8|light2[3] ; light6_D ; CLK_org    ;
+; N/A   ; None         ; 15.000 ns  ; Music:u12|Music      ; Speaker  ; CLK_org    ;
 +-------+--------------+------------+----------------------+----------+------------+
 
 
@@ -657,21 +659,20 @@ applicable agreement for further details.
 +---------------+-------------+-----------+------------+-----------------------------------------------+----------+
 ; Minimum Slack ; Required th ; Actual th ; From       ; To                                            ; To Clock ;
 +---------------+-------------+-----------+------------+-----------------------------------------------+----------+
-; N/A           ; None        ; 13.000 ns ; conti      ; MOD_MAX:u5|stop                               ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_low_A  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_low_A  ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; set_low_B  ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; set_low_B  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; set_low_B  ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; set_low_B  ; set_MAX:u3|maxL[1]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_low_C  ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_low_C  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_low_C  ; set_MAX:u3|maxL[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_low_C  ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; set_low_D  ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; set_low_D  ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; set_low_D  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; set_low_B  ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; set_low_B  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; set_low_B  ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; set_low_B  ; set_MAX:u3|maxL[1]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_low_D  ; set_MAX:u4|maxL[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; set_low_D  ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; set_low_D  ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; set_low_D  ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_low_D  ; set_MAX:u3|maxL[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_low_D  ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_low_D  ; set_MAX:u3|maxL[1]                            ; CLK_org  ;
@@ -687,39 +688,43 @@ applicable agreement for further details.
 ; N/A           ; None        ; 13.000 ns ; set_high_B ; set_MAX:u3|maxH[1]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_high_B ; set_MAX:u3|maxH[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_high_D ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; set_high_D ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_high_D ; set_MAX:u4|maxH[1]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; set_high_D ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_high_D ; set_MAX:u4|maxH[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_high_D ; set_MAX:u3|maxH[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_high_D ; set_MAX:u3|maxH[1]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_high_D ; set_MAX:u3|maxH[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; set_high_D ; set_MAX:u3|maxH[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; isWork     ; full:u6|start_seq_L[2]                        ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|stop                               ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; isWork     ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; isWork     ; full:u6|start_seq_L[0]                        ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; isWork     ; full:u6|start_seq_L[1]                        ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; SET        ; full:u6|start_seq_L[2]                        ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; full:u6|start_seq_L[0]                        ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; SET        ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; SET        ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; SET        ; MOD_MAX:u5|stop                               ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; SET        ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxH[1]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxL[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u4|maxH[2]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; SET        ; full:u6|start_seq_L[0]                        ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; SET        ; full:u6|start_seq_L[1]                        ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u3|maxL[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; SET        ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
@@ -737,23 +742,24 @@ applicable agreement for further details.
 ; N/A           ; None        ; 13.000 ns ; SET        ; light_1:u8|light[0]                           ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; light_1:u8|light2[3]                          ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; full:u6|start_seq_L[2]                        ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_work    ; full:u6|start_seq_L[0]                        ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|stop                               ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxH[1]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_work    ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxL[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u4|maxH[2]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_work    ; full:u6|start_seq_L[0]                        ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; full:u6|start_seq_L[1]                        ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u3|maxL[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
@@ -775,23 +781,24 @@ applicable agreement for further details.
 ; N/A           ; None        ; 13.000 ns ; EN_work    ; light_1:u8|light[0]                           ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; light_1:u8|light2[3]                          ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; full:u6|start_seq_L[2]                        ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_set     ; full:u6|start_seq_L[0]                        ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|ones[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|stop                               ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|ones[2]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|ones[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxH[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxH[1]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
-; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_set     ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxH[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxL[3]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxL[1]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxL[2]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxL[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u4|maxH[2]                            ; CLK_org  ;
+; N/A           ; None        ; 13.000 ns ; EN_set     ; full:u6|start_seq_L[0]                        ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; full:u6|start_seq_L[1]                        ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u3|maxL[2]                            ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; set_MAX:u3|maxL[0]                            ; CLK_org  ;
@@ -811,22 +818,18 @@ applicable agreement for further details.
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; light_1:u8|light[1]                           ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; light_1:u8|light2[0]                          ; CLK_org  ;
 ; N/A           ; None        ; 13.000 ns ; EN_set     ; light_1:u8|light[0]                           ; CLK_org  ;
-; N/A           ; None        ; 5.000 ns  ; isWork     ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
+; N/A           ; None        ; 5.000 ns  ; conti      ; MOD_MAX:u5|stop                               ; CLK_org  ;
+; N/A           ; None        ; 5.000 ns  ; isWork     ; full:u6|start_seq_L[3]                        ; CLK_org  ;
+; N/A           ; None        ; 5.000 ns  ; SET        ; MOD_MAX:u5|tens[2]                            ; CLK_org  ;
+; N/A           ; None        ; 5.000 ns  ; SET        ; MOD_MAX:u5|tens[1]                            ; CLK_org  ;
+; N/A           ; None        ; 5.000 ns  ; SET        ; MOD_MAX:u5|tens[0]                            ; CLK_org  ;
 ; N/A           ; None        ; 5.000 ns  ; SET        ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
+; N/A           ; None        ; 5.000 ns  ; SET        ; MOD_MAX:u5|tens[3]                            ; CLK_org  ;
 ; N/A           ; None        ; 5.000 ns  ; SET        ; full:u6|start_seq_L[3]                        ; CLK_org  ;
-; N/A           ; None        ; 5.000 ns  ; EN_work    ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
 ; N/A           ; None        ; 5.000 ns  ; EN_work    ; full:u6|start_seq_L[3]                        ; CLK_org  ;
-; N/A           ; None        ; 5.000 ns  ; EN_set     ; MOD_MAX:u5|ones[1]                            ; CLK_org  ;
 ; N/A           ; None        ; 5.000 ns  ; EN_set     ; full:u6|start_seq_L[3]                        ; CLK_org  ;
+; N/A           ; None        ; 4.000 ns  ; CLK_Music  ; Music:u12|Music                               ; CLK_org  ;
 ; N/A           ; None        ; 4.000 ns  ; isWork     ; all_slice:u7|allFull                          ; CLK_org  ;
-; N/A           ; None        ; 4.000 ns  ; isWork     ; full:u6|start_seq_L[2]                        ; CLK_org  ;
-; N/A           ; None        ; 4.000 ns  ; isWork     ; full:u6|start_seq_L[0]                        ; CLK_org  ;
-; N/A           ; None        ; 4.000 ns  ; isWork     ; full:u6|start_seq_L[1]                        ; CLK_org  ;
-; N/A           ; None        ; 4.000 ns  ; isWork     ; full:u6|start_seq_L[3]                        ; CLK_org  ;
-; N/A           ; None        ; 4.000 ns  ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[3] ; CLK_org  ;
-; N/A           ; None        ; 4.000 ns  ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[2] ; CLK_org  ;
-; N/A           ; None        ; 4.000 ns  ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[1] ; CLK_org  ;
-; N/A           ; None        ; 4.000 ns  ; isWork     ; full:u6|lpm_counter:start_seq_H_rtl_0|dffs[0] ; CLK_org  ;
 +---------------+-------------+-----------+------------+-----------------------------------------------+----------+
 
 
@@ -836,7 +839,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Thu Aug 29 17:20:48 2024
+    Info: Processing started: Thu Aug 29 20:54:34 2024
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Bottle -c Bottle
 Info: Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info: Started post-fitting delay annotation
@@ -846,60 +849,52 @@ Warning: Found pins functioning as undefined clocks and/or memory enables
     Info: Assuming node "CLK_org" is an undefined clock
 Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
     Info: Detected ripple clock "make_fre:u1|bin_Y" as buffer
-Info: Clock "CLK_org" has Internal fmax of 38.46 MHz between source register "all_slice:u7|allFull" and destination register "MOD_MAX:u5|ones[3]" (period= 26.0 ns)
-    Info: + Longest register to register delay is 21.000 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC111; Fanout = 36; REG Node = 'all_slice:u7|allFull'
-        Info: 2: + IC(2.000 ns) + CELL(6.000 ns) = 8.000 ns; Loc. = LC1; Fanout = 1; COMB Node = 'MOD_MAX:u5|tens~65'
-        Info: 3: + IC(0.000 ns) + CELL(1.000 ns) = 9.000 ns; Loc. = LC2; Fanout = 1; COMB Node = 'MOD_MAX:u5|tens~67'
-        Info: 4: + IC(0.000 ns) + CELL(1.000 ns) = 10.000 ns; Loc. = LC3; Fanout = 1; COMB Node = 'MOD_MAX:u5|tens~73'
-        Info: 5: + IC(0.000 ns) + CELL(2.000 ns) = 12.000 ns; Loc. = LC4; Fanout = 17; COMB Node = 'MOD_MAX:u5|tens~36'
-        Info: 6: + IC(2.000 ns) + CELL(6.000 ns) = 20.000 ns; Loc. = LC6; Fanout = 1; COMB Node = 'MOD_MAX:u5|ones~56'
-        Info: 7: + IC(0.000 ns) + CELL(1.000 ns) = 21.000 ns; Loc. = LC7; Fanout = 21; REG Node = 'MOD_MAX:u5|ones[3]'
-        Info: Total cell delay = 17.000 ns ( 80.95 % )
-        Info: Total interconnect delay = 4.000 ns ( 19.05 % )
+Info: Clock "CLK_org" has Internal fmax of 26.32 MHz between source register "set_MAX:u4|maxH[1]" and destination register "full:u6|start_seq_L[3]" (period= 38.0 ns)
+    Info: + Longest register to register delay is 33.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC99; Fanout = 36; REG Node = 'set_MAX:u4|maxH[1]'
+        Info: 2: + IC(2.000 ns) + CELL(8.000 ns) = 10.000 ns; Loc. = SEXP81; Fanout = 2; COMB Node = 'full:u6|start_seq_H~32'
+        Info: 3: + IC(0.000 ns) + CELL(7.000 ns) = 17.000 ns; Loc. = LC95; Fanout = 11; COMB Node = 'full:u6|start_seq_H~37'
+        Info: 4: + IC(2.000 ns) + CELL(8.000 ns) = 27.000 ns; Loc. = SEXP6; Fanout = 1; COMB Node = 'full:u6|start_seq_L~33'
+        Info: 5: + IC(0.000 ns) + CELL(6.000 ns) = 33.000 ns; Loc. = LC5; Fanout = 15; REG Node = 'full:u6|start_seq_L[3]'
+        Info: Total cell delay = 29.000 ns ( 87.88 % )
+        Info: Total interconnect delay = 4.000 ns ( 12.12 % )
     Info: - Smallest clock skew is 0.000 ns
         Info: + Shortest clock path from clock "CLK_org" to destination register is 19.000 ns
-            Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_58; Fanout = 25; CLK Node = 'CLK_org'
-            Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC20; Fanout = 58; REG Node = 'make_fre:u1|bin_Y'
-            Info: 3: + IC(2.000 ns) + CELL(6.000 ns) = 19.000 ns; Loc. = LC7; Fanout = 21; REG Node = 'MOD_MAX:u5|ones[3]'
+            Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_58; Fanout = 27; CLK Node = 'CLK_org'
+            Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC50; Fanout = 58; REG Node = 'make_fre:u1|bin_Y'
+            Info: 3: + IC(2.000 ns) + CELL(6.000 ns) = 19.000 ns; Loc. = LC5; Fanout = 15; REG Node = 'full:u6|start_seq_L[3]'
             Info: Total cell delay = 15.000 ns ( 78.95 % )
             Info: Total interconnect delay = 4.000 ns ( 21.05 % )
         Info: - Longest clock path from clock "CLK_org" to source register is 19.000 ns
-            Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_58; Fanout = 25; CLK Node = 'CLK_org'
-            Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC20; Fanout = 58; REG Node = 'make_fre:u1|bin_Y'
-            Info: 3: + IC(2.000 ns) + CELL(6.000 ns) = 19.000 ns; Loc. = LC111; Fanout = 36; REG Node = 'all_slice:u7|allFull'
+            Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_58; Fanout = 27; CLK Node = 'CLK_org'
+            Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC50; Fanout = 58; REG Node = 'make_fre:u1|bin_Y'
+            Info: 3: + IC(2.000 ns) + CELL(6.000 ns) = 19.000 ns; Loc. = LC99; Fanout = 36; REG Node = 'set_MAX:u4|maxH[1]'
             Info: Total cell delay = 15.000 ns ( 78.95 % )
             Info: Total interconnect delay = 4.000 ns ( 21.05 % )
     Info: + Micro clock to output delay of source is 1.000 ns
     Info: + Micro setup delay of destination is 4.000 ns
-Info: tsu for register "MOD_MAX:u5|ones[3]" (data pin = "isWork", clock pin = "CLK_org") is 8.000 ns
-    Info: + Longest pin to register delay is 23.000 ns
-        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_63; Fanout = 43; PIN Node = 'isWork'
-        Info: 2: + IC(2.000 ns) + CELL(6.000 ns) = 10.000 ns; Loc. = LC1; Fanout = 1; COMB Node = 'MOD_MAX:u5|tens~65'
-        Info: 3: + IC(0.000 ns) + CELL(1.000 ns) = 11.000 ns; Loc. = LC2; Fanout = 1; COMB Node = 'MOD_MAX:u5|tens~67'
-        Info: 4: + IC(0.000 ns) + CELL(1.000 ns) = 12.000 ns; Loc. = LC3; Fanout = 1; COMB Node = 'MOD_MAX:u5|tens~73'
-        Info: 5: + IC(0.000 ns) + CELL(2.000 ns) = 14.000 ns; Loc. = LC4; Fanout = 17; COMB Node = 'MOD_MAX:u5|tens~36'
-        Info: 6: + IC(2.000 ns) + CELL(6.000 ns) = 22.000 ns; Loc. = LC6; Fanout = 1; COMB Node = 'MOD_MAX:u5|ones~56'
-        Info: 7: + IC(0.000 ns) + CELL(1.000 ns) = 23.000 ns; Loc. = LC7; Fanout = 21; REG Node = 'MOD_MAX:u5|ones[3]'
-        Info: Total cell delay = 19.000 ns ( 82.61 % )
-        Info: Total interconnect delay = 4.000 ns ( 17.39 % )
+Info: tsu for register "Music:u12|Music" (data pin = "CLK_Music", clock pin = "CLK_org") is 4.000 ns
+    Info: + Longest pin to register delay is 10.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_56; Fanout = 1; PIN Node = 'CLK_Music'
+        Info: 2: + IC(2.000 ns) + CELL(6.000 ns) = 10.000 ns; Loc. = LC80; Fanout = 1; REG Node = 'Music:u12|Music'
+        Info: Total cell delay = 8.000 ns ( 80.00 % )
+        Info: Total interconnect delay = 2.000 ns ( 20.00 % )
     Info: + Micro setup delay of destination is 4.000 ns
-    Info: - Shortest clock path from clock "CLK_org" to destination register is 19.000 ns
-        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_58; Fanout = 25; CLK Node = 'CLK_org'
-        Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC20; Fanout = 58; REG Node = 'make_fre:u1|bin_Y'
-        Info: 3: + IC(2.000 ns) + CELL(6.000 ns) = 19.000 ns; Loc. = LC7; Fanout = 21; REG Node = 'MOD_MAX:u5|ones[3]'
-        Info: Total cell delay = 15.000 ns ( 78.95 % )
-        Info: Total interconnect delay = 4.000 ns ( 21.05 % )
+    Info: - Shortest clock path from clock "CLK_org" to destination register is 10.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_58; Fanout = 27; CLK Node = 'CLK_org'
+        Info: 2: + IC(2.000 ns) + CELL(6.000 ns) = 10.000 ns; Loc. = LC80; Fanout = 1; REG Node = 'Music:u12|Music'
+        Info: Total cell delay = 8.000 ns ( 80.00 % )
+        Info: Total interconnect delay = 2.000 ns ( 20.00 % )
 Info: tco from clock "CLK_org" to destination pin "light2_A" through register "set_MAX:u4|maxL[0]" is 33.000 ns
     Info: + Longest clock path from clock "CLK_org" to source register is 19.000 ns
-        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_58; Fanout = 25; CLK Node = 'CLK_org'
-        Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC20; Fanout = 58; REG Node = 'make_fre:u1|bin_Y'
-        Info: 3: + IC(2.000 ns) + CELL(6.000 ns) = 19.000 ns; Loc. = LC115; Fanout = 9; REG Node = 'set_MAX:u4|maxL[0]'
+        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_58; Fanout = 27; CLK Node = 'CLK_org'
+        Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC50; Fanout = 58; REG Node = 'make_fre:u1|bin_Y'
+        Info: 3: + IC(2.000 ns) + CELL(6.000 ns) = 19.000 ns; Loc. = LC117; Fanout = 39; REG Node = 'set_MAX:u4|maxL[0]'
         Info: Total cell delay = 15.000 ns ( 78.95 % )
         Info: Total interconnect delay = 4.000 ns ( 21.05 % )
     Info: + Micro clock to output delay of source is 1.000 ns
     Info: + Longest register to pin delay is 13.000 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC115; Fanout = 9; REG Node = 'set_MAX:u4|maxL[0]'
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC117; Fanout = 39; REG Node = 'set_MAX:u4|maxL[0]'
         Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 9.000 ns; Loc. = LC56; Fanout = 1; COMB Node = 'page:u11|Y2[0]~54'
         Info: 3: + IC(0.000 ns) + CELL(4.000 ns) = 13.000 ns; Loc. = PIN_37; Fanout = 0; PIN Node = 'light2_A'
         Info: Total cell delay = 11.000 ns ( 84.62 % )
@@ -910,22 +905,22 @@ Info: Longest tpd from source pin "PrintB" to destination pin "light1_g" is 15.0
     Info: 3: + IC(0.000 ns) + CELL(4.000 ns) = 15.000 ns; Loc. = PIN_51; Fanout = 0; PIN Node = 'light1_g'
     Info: Total cell delay = 13.000 ns ( 86.67 % )
     Info: Total interconnect delay = 2.000 ns ( 13.33 % )
-Info: th for register "MOD_MAX:u5|stop" (data pin = "conti", clock pin = "CLK_org") is 13.000 ns
+Info: th for register "set_MAX:u4|maxL[0]" (data pin = "set_low_A", clock pin = "CLK_org") is 13.000 ns
     Info: + Longest clock path from clock "CLK_org" to destination register is 19.000 ns
-        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_58; Fanout = 25; CLK Node = 'CLK_org'
-        Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC20; Fanout = 58; REG Node = 'make_fre:u1|bin_Y'
-        Info: 3: + IC(2.000 ns) + CELL(6.000 ns) = 19.000 ns; Loc. = LC15; Fanout = 35; REG Node = 'MOD_MAX:u5|stop'
+        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_58; Fanout = 27; CLK Node = 'CLK_org'
+        Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC50; Fanout = 58; REG Node = 'make_fre:u1|bin_Y'
+        Info: 3: + IC(2.000 ns) + CELL(6.000 ns) = 19.000 ns; Loc. = LC117; Fanout = 39; REG Node = 'set_MAX:u4|maxL[0]'
         Info: Total cell delay = 15.000 ns ( 78.95 % )
         Info: Total interconnect delay = 4.000 ns ( 21.05 % )
     Info: + Micro hold delay of destination is 4.000 ns
     Info: - Shortest pin to register delay is 10.000 ns
-        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_67; Fanout = 1; PIN Node = 'conti'
-        Info: 2: + IC(2.000 ns) + CELL(6.000 ns) = 10.000 ns; Loc. = LC15; Fanout = 35; REG Node = 'MOD_MAX:u5|stop'
+        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_80; Fanout = 2; PIN Node = 'set_low_A'
+        Info: 2: + IC(2.000 ns) + CELL(6.000 ns) = 10.000 ns; Loc. = LC117; Fanout = 39; REG Node = 'set_MAX:u4|maxL[0]'
         Info: Total cell delay = 8.000 ns ( 80.00 % )
         Info: Total interconnect delay = 2.000 ns ( 20.00 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 184 megabytes
-    Info: Processing ended: Thu Aug 29 17:20:48 2024
+    Info: Processing ended: Thu Aug 29 20:54:34 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

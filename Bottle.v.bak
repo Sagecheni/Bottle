@@ -1,4 +1,4 @@
-module bottle (
+module Bottle (
     input wire CLK_org,                   // 原始时钟输入信号
     input wire CLK_Music,                 // 音乐时钟输入信号
     
@@ -18,8 +18,9 @@ module bottle (
     output wire light1_a, light1_b, light1_c, light1_d, light1_e, light1_f, light1_g, // 第1组灯光控制输出（七段显示器）
     
     input wire set_low_D, set_low_C, set_low_B, set_low_A, // 设置低位数据输入
-    input wire set_high_D, set_high_C, set_high_B, set_high_A // 设置高位数据输入
+    input wire set_high_D, set_high_C, set_high_B, set_high_A, // 设置高位数据输入
 
+	output wire Speaker,
 );
 
 // 内部信号声明
@@ -57,7 +58,7 @@ BCD_7 u9 (.EN(PrintB), .a(light1_a), .b(light1_b), .c(light1_c), .d(light1_d), .
 
 page u11 (.CLK(CLK_org), .EN(mode_EN), .SET(SET), .EN_work(EN_work), .EN_set(EN_set), .print1(PrintB), .max2(Maxh), .max1(Maxl), .ten(bot_max2), .one(bot_max1), .mode1(mode_light1), .mode2(mode_light2), .seqH(bot_seq_H), .seqL(bot_seq_L), .now2(bot_high), .now1(bot_low), .out6(light6), .out5(light5), .out4(light4), .out3(light3), .out2(light2)); // 页面显示控制
 
-
+Music u12 (.CLK(CLK_org), .CLK_1(CLK_Music), .allFull(allFull), .Music(Speaker));
 
 // 输出灯光信号映射
 assign light6_D = light6[3]; assign light6_C = light6[2]; assign light6_B = light6[1]; assign light6_A = light6[0];

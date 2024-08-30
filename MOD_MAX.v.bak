@@ -3,8 +3,8 @@ module MOD_MAX (
     input wire isWork,        // 工作状态信号，高电平表示正在工作
     input wire conti,         // 是否继续计数信号，高电平表示继续
     input wire allFull,       // 全满信号，高电平表示药瓶已满
-    input wire EN_work,       // 工作使能信号，高电平表示使能
-    input wire EN_set,        // 设置使能信号，高电平表示使能
+    input wire EN_work,       // 工作模式信号
+    input wire EN_set,        // 设置模式信号
     input wire set,           // 设置信号，高电平表示正在设置
     input wire [3:0] maxL,    // 药瓶容量的个位部分
     input wire [3:0] maxH,    // 药瓶容量的十位部分

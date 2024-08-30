@@ -1,4 +1,4 @@
-//-*- coding: GB2312 -*-
+//È«Âú¾¯¸æ
 module all_slice (
     input wire CLK,
     input wire isWork,

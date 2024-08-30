@@ -1,65 +1,66 @@
-module bottle (
-    input wire CLK_org,                   // åŸå§‹æ—¶é’Ÿè¾“å…¥ä¿¡å·
-    input wire CLK_Music,                 // éŸ³ä¹æ—¶é’Ÿè¾“å…¥ä¿¡å·
+module Bottle (
+    input wire CLK_org,                   // Ô­Ê¼Ê±ÖÓÊäÈëĞÅºÅ
+    input wire CLK_Music,                 // ÒôÀÖÊ±ÖÓÊäÈëĞÅºÅ
     
-    input wire isWork,                    // å·¥ä½œçŠ¶æ€ä¿¡å·
-    input wire EN_work,                   // å·¥ä½œä½¿èƒ½ä¿¡å·
-    input wire EN_set,                    // è®¾ç½®ä½¿èƒ½ä¿¡å·
-    input wire SET,                       // è®¾ç½®ä¿¡å·
-    input wire conti,                     // è¿ç»­æ“ä½œä¿¡å·
-    input wire PrintB,                    // æ‰“å°ä½¿èƒ½ä¿¡å·
-    input wire mode_EN,                   // æ¨¡å¼ä½¿èƒ½ä¿¡å·
+    input wire isWork,                    // ¹¤×÷×´Ì¬ĞÅºÅ
+    input wire EN_work,                   // ¹¤×÷Ê¹ÄÜĞÅºÅ
+    input wire EN_set,                    // ÉèÖÃÊ¹ÄÜĞÅºÅ
+    input wire SET,                       // ÉèÖÃĞÅºÅ
+    input wire conti,                     // Á¬Ğø²Ù×÷ĞÅºÅ
+    input wire PrintB,                    // ´òÓ¡Ê¹ÄÜĞÅºÅ
+    input wire mode_EN,                   // Ä£Ê½Ê¹ÄÜĞÅºÅ
     
-    output wire light6_D, light6_C, light6_B, light6_A,  // ç¬¬6ç»„ç¯å…‰æ§åˆ¶è¾“å‡º
-    output wire light5_D, light5_C, light5_B, light5_A,  // ç¬¬5ç»„ç¯å…‰æ§åˆ¶è¾“å‡º
-    output wire light4_D, light4_C, light4_B, light4_A,  // ç¬¬4ç»„ç¯å…‰æ§åˆ¶è¾“å‡º
-    output wire light3_D, light3_C, light3_B, light3_A,  // ç¬¬3ç»„ç¯å…‰æ§åˆ¶è¾“å‡º
-    output wire light2_D, light2_C, light2_B, light2_A,  // ç¬¬2ç»„ç¯å…‰æ§åˆ¶è¾“å‡º
-    output wire light1_a, light1_b, light1_c, light1_d, light1_e, light1_f, light1_g, // ç¬¬1ç»„ç¯å…‰æ§åˆ¶è¾“å‡ºï¼ˆä¸ƒæ®µæ˜¾ç¤ºå™¨ï¼‰
+    output wire light6_D, light6_C, light6_B, light6_A,  // µÚ6×éµÆ¹â¿ØÖÆÊä³ö
+    output wire light5_D, light5_C, light5_B, light5_A,  // µÚ5×éµÆ¹â¿ØÖÆÊä³ö
+    output wire light4_D, light4_C, light4_B, light4_A,  // µÚ4×éµÆ¹â¿ØÖÆÊä³ö
+    output wire light3_D, light3_C, light3_B, light3_A,  // µÚ3×éµÆ¹â¿ØÖÆÊä³ö
+    output wire light2_D, light2_C, light2_B, light2_A,  // µÚ2×éµÆ¹â¿ØÖÆÊä³ö
+    output wire light1_a, light1_b, light1_c, light1_d, light1_e, light1_f, light1_g, // µÚ1×éµÆ¹â¿ØÖÆÊä³ö£¨Æß¶ÎÏÔÊ¾Æ÷£©
     
-    input wire set_low_D, set_low_C, set_low_B, set_low_A, // è®¾ç½®ä½ä½æ•°æ®è¾“å…¥
-    input wire set_high_D, set_high_C, set_high_B, set_high_A // è®¾ç½®é«˜ä½æ•°æ®è¾“å…¥
+    input wire set_low_D, set_low_C, set_low_B, set_low_A, // ÉèÖÃµÍÎ»Êı¾İÊäÈë
+    input wire set_high_D, set_high_C, set_high_B, set_high_A, // ÉèÖÃ¸ßÎ»Êı¾İÊäÈë
 
+	output wire Speaker
 );
 
-// å†…éƒ¨ä¿¡å·å£°æ˜
-wire CLK;                         // ç”Ÿæˆçš„æ—¶é’Ÿä¿¡å·
-wire maxA, maxB, botA, botB;      // æœ€å¤§å€¼å’Œåº•éƒ¨çŠ¶æ€ä¿¡å·
+// ÄÚ²¿ĞÅºÅÉùÃ÷
+wire CLK;                         // Éú³ÉµÄÊ±ÖÓĞÅºÅ
+wire maxA, maxB, botA, botB;      // ×î´óÖµºÍµ×²¿×´Ì¬ĞÅºÅ
 
-// è®¾ç½®è¾“å…¥ä¿¡å·ç»„åˆæˆ4ä½ä¿¡å·
-wire [3:0] Cinl = {set_low_D, set_low_C, set_low_B, set_low_A}; // ä½ä½è¾“å…¥ç»„åˆä¿¡å·
-wire [3:0] Cinh = {set_high_D, set_high_C, set_high_B, set_high_A}; // é«˜ä½è¾“å…¥ç»„åˆä¿¡å·
+// ÉèÖÃÊäÈëĞÅºÅ×éºÏ³É4Î»ĞÅºÅ
+wire [3:0] Cinl = {set_low_D, set_low_C, set_low_B, set_low_A}; // µÍÎ»ÊäÈë×éºÏĞÅºÅ
+wire [3:0] Cinh = {set_high_D, set_high_C, set_high_B, set_high_A}; // ¸ßÎ»ÊäÈë×éºÏĞÅºÅ
 
-// å†…éƒ¨ä¿¡å·ç”¨äºè®¡æ•°å’ŒçŠ¶æ€
-wire [3:0] Maxl, Maxh;            // æœ€å¤§å€¼çš„ä½ä½å’Œé«˜ä½
-wire [3:0] bot_low, bot_high;     // å½“å‰ç“¶å­æ•°é‡çš„ä½ä½å’Œé«˜ä½
-wire [3:0] bot_max2, bot_max1;    // æœ€å¤§ç“¶å­æ•°é‡çš„ä½ä½å’Œé«˜ä½
-wire [3:0] bot_seq_L, bot_seq_H;  // åºåˆ—å·ä½ä½å’Œé«˜ä½
+// ÄÚ²¿ĞÅºÅÓÃÓÚ¼ÆÊıºÍ×´Ì¬
+wire [3:0] Maxl, Maxh;            // ×î´óÖµµÄµÍÎ»ºÍ¸ßÎ»
+wire [3:0] bot_low, bot_high;     // µ±Ç°Æ¿×ÓÊıÁ¿µÄµÍÎ»ºÍ¸ßÎ»
+wire [3:0] bot_max2, bot_max1;    // ×î´óÆ¿×ÓÊıÁ¿µÄµÍÎ»ºÍ¸ßÎ»
+wire [3:0] bot_seq_L, bot_seq_H;  // ĞòÁĞºÅµÍÎ»ºÍ¸ßÎ»
 
-wire allFull;                     // å…¨éƒ¨ç“¶å­å·²æ»¡ä¿¡å·
-wire [3:0] mode_light1, mode_light2; // æ¨¡å¼ç¯å…‰æ˜¾ç¤ºä¿¡å·
-wire [3:0] light6, light5, light4, light3, light2; // å„ç»„ç¯å…‰æ§åˆ¶ä¿¡å·
-
-
-// ç»„ä»¶å®ä¾‹åŒ–
-make_fre u1 (.CLK(CLK_org), .CLK_out(CLK)); // é¢‘ç‡ç”Ÿæˆå™¨
-Decoder_2to4 u2 (.inB(SET), .inA(SET), .outD(botA), .outC(botB), .outB(maxA), .outA(maxB)); // è§£ç å™¨
-
-set_MAX u3 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(maxA & maxB), .setL(Cinl), .setH(Cinh), .maxL(bot_max1), .maxH(bot_max2)); // æœ€å¤§å€¼è®¾ç½®
-set_MAX u4 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(botA & botB), .setL(Cinl), .setH(Cinh), .maxL(Maxl), .maxH(Maxh)); // å¦ä¸€ç»„æœ€å¤§å€¼è®¾ç½®
-
-MOD_MAX u5 (.CLK(CLK), .isWork(isWork), .conti(conti), .allFull(allFull), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .maxL(Maxl), .maxH(Maxh), .outL(bot_low), .outH(bot_high)); // ç®¡ç†å½“å‰æ•°é‡ä¸æœ€å¤§å€¼
-full u6 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .isWork(isWork), .maxL(Maxl), .maxH(Maxh), .nowL(bot_low), .nowH(bot_high), .seqL(bot_seq_L), .seqH(bot_seq_H)); // æ£€æŸ¥ç“¶å­æ˜¯å¦å·²æ»¡
-all_slice u7 (.CLK(CLK), .isWork(isWork), .bot_seq_L(bot_seq_L), .bot_seq_H(bot_seq_H), .bot_maxL(bot_max1), .bot_maxH(bot_max2), .allFull(allFull)); // æ£€æŸ¥æ‰€æœ‰ç“¶å­æ˜¯å¦å·²æ»¡
-
-light_1 u8 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .SET(SET), .allFull(allFull), .light(mode_light1), .light2(mode_light2)); // ç¯å…‰æ§åˆ¶
-BCD_7 u9 (.EN(PrintB), .a(light1_a), .b(light1_b), .c(light1_c), .d(light1_d), .e(light1_e), .f(light1_f), .g(light1_g)); // ä¸ƒæ®µæ˜¾ç¤ºæ§åˆ¶
-
-page u11 (.CLK(CLK_org), .EN(mode_EN), .SET(SET), .EN_work(EN_work), .EN_set(EN_set), .print1(PrintB), .max2(Maxh), .max1(Maxl), .ten(bot_max2), .one(bot_max1), .mode1(mode_light1), .mode2(mode_light2), .seqH(bot_seq_H), .seqL(bot_seq_L), .now2(bot_high), .now1(bot_low), .out6(light6), .out5(light5), .out4(light4), .out3(light3), .out2(light2)); // é¡µé¢æ˜¾ç¤ºæ§åˆ¶
+wire allFull;                     // È«²¿Æ¿×ÓÒÑÂúĞÅºÅ
+wire [3:0] mode_light1, mode_light2; // Ä£Ê½µÆ¹âÏÔÊ¾ĞÅºÅ
+wire [3:0] light6, light5, light4, light3, light2; // ¸÷×éµÆ¹â¿ØÖÆĞÅºÅ
 
 
+// ×é¼şÊµÀı»¯
+make_fre u1 (.CLK(CLK_org), .CLK_out(CLK)); // ÆµÂÊÉú³ÉÆ÷
+Decoder_2to4 u2 (.inB(SET), .inA(SET), .outD(botA), .outC(botB), .outB(maxA), .outA(maxB)); // ½âÂëÆ÷
 
-// è¾“å‡ºç¯å…‰ä¿¡å·æ˜ å°„
+set_MAX u3 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(maxA & maxB), .setL(Cinl), .setH(Cinh), .maxL(bot_max1), .maxH(bot_max2)); // ×î´óÖµÉèÖÃ
+set_MAX u4 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(botA & botB), .setL(Cinl), .setH(Cinh), .maxL(Maxl), .maxH(Maxh)); // ÁíÒ»×é×î´óÖµÉèÖÃ
+
+MOD_MAX u5 (.CLK(CLK), .isWork(isWork), .conti(conti), .allFull(allFull), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .maxL(Maxl), .maxH(Maxh), .outL(bot_low), .outH(bot_high)); // ¹ÜÀíµ±Ç°ÊıÁ¿Óë×î´óÖµ
+full u6 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .isWork(isWork), .maxL(Maxl), .maxH(Maxh), .nowL(bot_low), .nowH(bot_high), .seqL(bot_seq_L), .seqH(bot_seq_H)); // ¼ì²éÆ¿×ÓÊÇ·ñÒÑÂú
+all_slice u7 (.CLK(CLK), .isWork(isWork), .bot_seq_L(bot_seq_L), .bot_seq_H(bot_seq_H), .bot_maxL(bot_max1), .bot_maxH(bot_max2), .allFull(allFull)); // ¼ì²éËùÓĞÆ¿×ÓÊÇ·ñÒÑÂú
+
+light_1 u8 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .SET(SET), .allFull(allFull), .light(mode_light1), .light2(mode_light2)); // µÆ¹â¿ØÖÆ
+BCD_7 u9 (.EN(PrintB), .a(light1_a), .b(light1_b), .c(light1_c), .d(light1_d), .e(light1_e), .f(light1_f), .g(light1_g)); // Æß¶ÎÏÔÊ¾¿ØÖÆ
+
+page u11 (.CLK(CLK_org), .EN(mode_EN), .SET(SET), .EN_work(EN_work), .EN_set(EN_set), .print1(PrintB), .max2(Maxh), .max1(Maxl), .ten(bot_max2), .one(bot_max1), .mode1(mode_light1), .mode2(mode_light2), .seqH(bot_seq_H), .seqL(bot_seq_L), .now2(bot_high), .now1(bot_low), .out6(light6), .out5(light5), .out4(light4), .out3(light3), .out2(light2)); // Ò³ÃæÏÔÊ¾¿ØÖÆ
+
+Music u12 (.CLK(CLK_org), .CLK_1(CLK_Music), .allFull(allFull), .Music(Speaker));
+
+// Êä³öµÆ¹âĞÅºÅÓ³Éä
 assign light6_D = light6[3]; assign light6_C = light6[2]; assign light6_B = light6[1]; assign light6_A = light6[0];
 assign light5_D = light5[3]; assign light5_C = light5[2]; assign light5_B = light5[1]; assign light5_A = light5[0];
 assign light4_D = light4[3]; assign light4_C = light4[2]; assign light4_B = light4[1]; assign light4_A = light4[0];
