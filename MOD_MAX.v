@@ -39,23 +39,19 @@ module MOD_MAX (
             start_seq_H <= 4'b0000;
             allFull <= 0;
         end else if (isWork && !allFull) begin
-            // 在工作状态下，检查当前药片数量是否已达到最大容量
-            if ((ones == maxL - 1 && tens == maxH)) begin
-                if (start_seq_L == bot_maxL - 1 && start_seq_H == bot_maxH) begin
-                    // 如果即将装满最后一个瓶子，触发全满信号
-                    allFull <= 1'b1;
-                end else begin
+            if (start_seq_L == bot_maxL  && start_seq_H == bot_maxH && ones==0 && tens==0) begin
+                // 如果已经装满所有瓶子，触发全满信号
+                allFull <= 1'b1;
+            end else if ((ones==9 && tens ==maxH-1)||(ones == maxL - 1 && tens == maxH)) begin
                     // 正常增加瓶子计数
                     ones <= 4'b0000;
                     tens <= 4'b0000;
-
                     if (start_seq_L == 4'b1001) begin
                         start_seq_L <= 4'b0000;
                         start_seq_H <= start_seq_H + 1;
                     end else begin
                         start_seq_L <= start_seq_L + 1;
                     end
-                end
             end else if (!EN_work && !EN_set) begin
                 // 如果个位数达到9，个位数复位，十位数加1
                 if (ones == 4'b1001) begin
@@ -69,7 +65,7 @@ module MOD_MAX (
         end else if (!isWork) begin
             // 如果停止工作，复位全满信号
             allFull <= 1'b0;
-        end else if (conti && !allFull) begin
+        end else if (conti) begin
             // 如果 conti 信号高电平，且未满瓶，继续计数
             ones <= ones + 1;
         end

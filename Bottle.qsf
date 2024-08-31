@@ -106,9 +106,7 @@ set_global_assignment -name VERILOG_FILE MOD_MAX.v
 set_global_assignment -name VERILOG_FILE set_MAX.v
 set_global_assignment -name VERILOG_FILE Decoder_2to4.v
 set_global_assignment -name VERILOG_FILE BCD_7.v
-set_global_assignment -name VERILOG_FILE full.v
 set_global_assignment -name VERILOG_FILE light_1.v
-set_global_assignment -name VERILOG_FILE all_slice.v
 set_global_assignment -name VERILOG_FILE make_fre.v
 set_global_assignment -name VERILOG_FILE page.v
 set_global_assignment -name MISC_FILE \\\\wsl.localhost\\Debian\\home\\sa1ge\\Document\\00Inbox\\Bottle\\Bottle.dpf

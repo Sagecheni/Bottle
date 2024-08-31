@@ -9,10 +9,8 @@ module Decoder_2to4 (
 
     always @(*) begin
         case ({inB, inA})
-            2'b00: {outD, outC, outB, outA} <= 4'b1110;
-            2'b01: {outD, outC, outB, outA} <= 4'b1101;
-            2'b10: {outD, outC, outB, outA} <= 4'b1011;
-            2'b11: {outD, outC, outB, outA} <= 4'b0111;
+            2'b00: {outD, outC, outB, outA} <= 4'b0011;
+            2'b11: {outD, outC, outB, outA} <= 4'b1100;
             default: {outD, outC, outB, outA} <= 4'b1111;
         endcase
     end

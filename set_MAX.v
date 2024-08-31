@@ -12,7 +12,7 @@ module set_MAX (
 );
 
     always @(posedge CLK) begin
-        if (EN_work && !EN_set && !set) begin
+        if (EN_work && !EN_set && set) begin
             maxL <= (setL > 4'b1001) ? 4'b1001 : setL;
             maxH <= (setH > 4'b1001) ? 4'b1001 : setH;
         end
