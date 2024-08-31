@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Bottle
-Sat Aug 31 14:26:17 2024
+Sat Aug 31 15:35:50 2024
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -47,12 +47,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Aug 31 14:26:17 2024    ;
+; Analysis & Synthesis Status ; Successful - Sat Aug 31 15:35:50 2024    ;
 ; Quartus II Version          ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; Bottle                                   ;
 ; Top-level Entity Name       ; Bottle                                   ;
 ; Family                      ; MAX7000S                                 ;
-; Total macrocells            ; 106                                      ;
+; Total macrocells            ; 110                                      ;
 ; Total pins                  ; 45                                       ;
 +-----------------------------+------------------------------------------+
 
@@ -159,15 +159,15 @@ applicable agreement for further details.
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 106                  ;
-; Total registers      ; 66                   ;
+; Logic cells          ; 110                  ;
+; Total registers      ; 68                   ;
 ; I/O pins             ; 45                   ;
-; Shareable expanders  ; 21                   ;
-; Parallel expanders   ; 9                    ;
+; Shareable expanders  ; 27                   ;
+; Parallel expanders   ; 10                   ;
 ; Maximum fan-out node ; CLK_org              ;
-; Maximum fan-out      ; 73                   ;
-; Total fan-out        ; 817                  ;
-; Average fan-out      ; 4.75                 ;
+; Maximum fan-out      ; 75                   ;
+; Total fan-out        ; 917                  ;
+; Average fan-out      ; 5.04                 ;
 +----------------------+----------------------+
 
 
@@ -176,8 +176,8 @@ applicable agreement for further details.
 +---------------------------------------+------------+------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node            ; Macrocells ; Pins ; Full Hierarchy Name                              ; Library Name ;
 +---------------------------------------+------------+------+--------------------------------------------------+--------------+
-; |Bottle                               ; 106        ; 45   ; |Bottle                                          ; work         ;
-;    |MOD_MAX:u3|                       ; 46         ; 0    ; |Bottle|MOD_MAX:u3                               ; work         ;
+; |Bottle                               ; 110        ; 45   ; |Bottle                                          ; work         ;
+;    |MOD_MAX:u3|                       ; 50         ; 0    ; |Bottle|MOD_MAX:u3                               ; work         ;
 ;       |lpm_counter:start_seq_H_rtl_0| ; 4          ; 0    ; |Bottle|MOD_MAX:u3|lpm_counter:start_seq_H_rtl_0 ; work         ;
 ;    |Music:u7|                         ; 10         ; 0    ; |Bottle|Music:u7                                 ; work         ;
 ;       |lpm_counter:counter_rtl_1|     ; 8          ; 0    ; |Bottle|Music:u7|lpm_counter:counter_rtl_1       ; work         ;
@@ -326,7 +326,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sat Aug 31 14:26:14 2024
+    Info: Processing started: Sat Aug 31 15:35:46 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Bottle -c Bottle
 Info: Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info: Found 1 design units, including 1 entities, in source file music.v
@@ -349,11 +349,10 @@ Info: Found 1 design units, including 1 entities, in source file page.v
 Info: Elaborating entity "Bottle" for the top level hierarchy
 Info: Elaborating entity "set_MAX" for hierarchy "set_MAX:u1"
 Info: Elaborating entity "MOD_MAX" for hierarchy "MOD_MAX:u3"
-Warning (10230): Verilog HDL assignment warning at MOD_MAX.v(51): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at MOD_MAX.v(53): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at MOD_MAX.v(59): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at MOD_MAX.v(62): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at MOD_MAX.v(70): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at MOD_MAX.v(64): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at MOD_MAX.v(66): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at MOD_MAX.v(78): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at MOD_MAX.v(81): truncated value with size 32 to match size of target (4)
 Info: Elaborating entity "light_1" for hierarchy "light_1:u4"
 Info: Elaborating entity "BCD_7" for hierarchy "BCD_7:u5"
 Info: Elaborating entity "page" for hierarchy "page:u6"
@@ -449,15 +448,15 @@ Info: Ignored 3 buffer(s)
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "light1_b" is stuck at VCC
     Warning (13410): Pin "light1_f" is stuck at GND
-Info: Implemented 172 device resources after synthesis - the final resource count might be different
+Info: Implemented 182 device resources after synthesis - the final resource count might be different
     Info: Implemented 17 input pins
     Info: Implemented 28 output pins
-    Info: Implemented 106 macrocells
-    Info: Implemented 21 shareable expanders
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 50 warnings
+    Info: Implemented 110 macrocells
+    Info: Implemented 27 shareable expanders
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 49 warnings
     Info: Peak virtual memory: 235 megabytes
-    Info: Processing ended: Sat Aug 31 14:26:17 2024
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Sat Aug 31 15:35:51 2024
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:01
 
 

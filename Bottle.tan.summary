@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 26.000 ns
-From           : isWork
-To             : MOD_MAX:u3|ones[2]
+Actual Time    : 14.000 ns
+From           : EN_set
+To             : MOD_MAX:u3|ones[3]
 From Clock     : --
 To Clock       : CLK_org
 Failed Paths   : 0
@@ -45,9 +45,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'CLK_org'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 25.00 MHz ( period = 40.000 ns )
-From           : MOD_MAX:u3|tens[3]
-To             : MOD_MAX:u3|ones[2]
+Actual Time    : 28.57 MHz ( period = 35.000 ns )
+From           : MOD_MAX:u3|ones[1]
+To             : MOD_MAX:u3|ones[3]
 From Clock     : CLK_org
 To Clock       : CLK_org
 Failed Paths   : 0

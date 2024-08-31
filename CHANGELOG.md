@@ -11,12 +11,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
 
-## [4.0.0] - 2024-08-31
+## [4.0.0] - 2024-08-31---14：02
 
 ### Added
 
 - 新增“在清零的时候不会导致设置的药瓶数和药瓶容量被清零”逻辑。
-- 添加部分信号相关的注释。
+- 新增部分信号相关的注释。
 
 ### Remove
 
@@ -27,3 +27,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - 为了使得全满信号得以同步，将MOD_MAX,full,all_slice三个模块于以合并，并修正部分计数错误逻辑。
 
+
+
+## [4.0.1] - 2024-08-31---14：02
+
+### Added
+- 新增间隔计数功能。

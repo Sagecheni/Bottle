@@ -6,7 +6,7 @@ module Bottle (
     input wire EN_work,                   // 
     input wire EN_set,                    // 
     input wire SET,                       // 
-    input wire conti,                     // 
+    input wire conti,                     // 间隔计数开关
     input wire PrintB,                    // 
     input wire mode_EN,                   // 
     
