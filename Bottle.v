@@ -49,10 +49,8 @@ Decoder_2to4 u2 (.inB(SET), .inA(SET), .outD(botA), .outC(botB), .outB(maxA), .o
 set_MAX u3 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(maxA & maxB), .setL(Cinl), .setH(Cinh), .maxL(bot_max1), .maxH(bot_max2)); // 最大值设置
 set_MAX u4 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(botA & botB), .setL(Cinl), .setH(Cinh), .maxL(Maxl), .maxH(Maxh)); // 另一组最大值设置
 
-MOD_MAX u5 (.CLK(CLK), .isWork(isWork), .conti(conti), .allFull(allFull), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .maxL(Maxl), .maxH(Maxh), .outL(bot_low), .outH(bot_high)); // 管理当前数量与最大值
-full u6 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .isWork(isWork),.allFull(allFull), .maxL(Maxl), .maxH(Maxh), .nowL(bot_low), .nowH(bot_high), .seqL(bot_seq_L), .seqH(bot_seq_H)); // 检查瓶子是否已满
-all_slice u7 (.CLK(CLK), .isWork(isWork), .bot_seq_L(bot_seq_L), .bot_seq_H(bot_seq_H), .bot_maxL(bot_max1), .bot_maxH(bot_max2), .allFull(allFull)); // 检查所有瓶子是否已满
-
+MOD_MAX u5 (.CLK(CLK), .isWork(isWork), .conti(conti), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .maxL(Maxl), .maxH(Maxh),.nowL(bot_low), .nowH(bot_high),.bot_maxL(bot_max1), .bot_maxH(bot_max2), .outL(bot_low), .outH(bot_high),.seqL(bot_seq_L), .seqH(bot_seq_H),.allFull(allFull)); // 管理当前数量与最大值
+//full u6 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .isWork(isWork),.allFull(allFull), .maxL(Maxl), .maxH(Maxh), .nowL(bot_low), .nowH(bot_high), .seqL(bot_seq_L), .seqH(bot_seq_H)); // 检查瓶子是否已满
 light_1 u8 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .SET(SET), .allFull(allFull), .light(mode_light1), .light2(mode_light2)); // 灯光控制
 BCD_7 u9 (.EN(PrintB), .a(light1_a), .b(light1_b), .c(light1_c), .d(light1_d), .e(light1_e), .f(light1_f), .g(light1_g)); // 七段显示控制
 page u11 (.CLK(CLK_org), .EN(mode_EN), .SET(SET), .EN_work(EN_work), .EN_set(EN_set), .print1(PrintB), .max2(Maxh), .max1(Maxl), .ten(bot_max2), .one(bot_max1), .mode1(mode_light1), .mode2(mode_light2), .seqH(bot_seq_H), .seqL(bot_seq_L), .now2(bot_high), .now1(bot_low), .out6(light6), .out5(light5), .out4(light4), .out3(light3), .out2(light2)); // 页面显示控制

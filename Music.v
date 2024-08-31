@@ -8,6 +8,7 @@ module Music (
     reg [7:0] counter;      // 8位计数器，用于生成音频信号
     reg enable_audio;       // 控制音频启停的标志
 
+
     // 使用 1 Hz 的 CLK 信号控制音频的启停
     always @(posedge CLK) begin
         if (allFull) begin

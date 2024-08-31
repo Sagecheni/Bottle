@@ -112,4 +112,3 @@ set_global_assignment -name VERILOG_FILE all_slice.v
 set_global_assignment -name VERILOG_FILE make_fre.v
 set_global_assignment -name VERILOG_FILE page.v
 set_global_assignment -name MISC_FILE \\\\wsl.localhost\\Debian\\home\\sa1ge\\Document\\00Inbox\\Bottle\\Bottle.dpf
-set_global_assignment -name VERILOG_FILE //wsl.localhost/Debian/home/sa1ge/Document/00Inbox/Bottle/control.v
