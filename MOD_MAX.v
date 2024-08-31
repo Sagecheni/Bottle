@@ -42,7 +42,7 @@ module MOD_MAX (
             if (start_seq_L == bot_maxL  && start_seq_H == bot_maxH && ones==0 && tens==0) begin
                 // 如果已经装满所有瓶子，触发全满信号
                 allFull <= 1'b1;
-            end else if ((ones==9 && tens ==maxH-1)||(ones == maxL - 1 && tens == maxH)) begin
+            end else if (ones == maxL - 1 && tens == maxH) begin
                     // 正常增加瓶子计数
                     ones <= 4'b0000;
                     tens <= 4'b0000;

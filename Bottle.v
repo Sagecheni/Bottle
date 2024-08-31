@@ -39,11 +39,11 @@ wire [3:0] mode_light1, mode_light2; //
 wire [3:0] light6, light5, light4, light3, light2; 
 
 
-set_MAX u1 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(SET && !PrintB), .setL(Cinl), .setH(Cinh), .maxL(bot_max1), .maxH(bot_max2)); // 设置瓶子数目
-set_MAX u2 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .set(!SET && !PrintB), .setL(Cinl), .setH(Cinh), .maxL(Maxl), .maxH(Maxh)); // 设置单个瓶子的容量
+set_MAX u1 (.CLK(CLK_org), .EN_work(EN_work), .EN_set(EN_set), .set(SET && !PrintB), .setL(Cinl), .setH(Cinh), .maxL(bot_max1), .maxH(bot_max2)); // 设置瓶子数目
+set_MAX u2 (.CLK(CLK_org), .EN_work(EN_work), .EN_set(EN_set), .set(!SET && !PrintB), .setL(Cinl), .setH(Cinh), .maxL(Maxl), .maxH(Maxh)); // 设置单个瓶子的容量
 
-MOD_MAX u3 (.CLK(CLK), .isWork(isWork), .conti(conti), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .maxL(Maxl), .maxH(Maxh),.nowL(bot_low), .nowH(bot_high),.bot_maxL(bot_max1), .bot_maxH(bot_max2), .outL(bot_low), .outH(bot_high),.seqL(bot_seq_L), .seqH(bot_seq_H),.allFull(allFull)); // 
-light_1 u4 (.CLK(CLK), .EN_work(EN_work), .EN_set(EN_set), .SET(SET), .allFull(allFull), .light(mode_light1), .light2(mode_light2)); // 
+MOD_MAX u3 (.CLK(CLK_org), .isWork(isWork), .conti(conti), .EN_work(EN_work), .EN_set(EN_set), .set(SET), .maxL(Maxl), .maxH(Maxh),.nowL(bot_low), .nowH(bot_high),.bot_maxL(bot_max1), .bot_maxH(bot_max2), .outL(bot_low), .outH(bot_high),.seqL(bot_seq_L), .seqH(bot_seq_H),.allFull(allFull)); // 
+light_1 u4 (.CLK(CLK_org), .EN_work(EN_work), .EN_set(EN_set), .SET(SET), .allFull(allFull), .light(mode_light1), .light2(mode_light2)); // 
 BCD_7 u5 (.EN(PrintB), .a(light1_a), .b(light1_b), .c(light1_c), .d(light1_d), .e(light1_e), .f(light1_f), .g(light1_g)); // 
 page u6 (.CLK(CLK_org), .EN(mode_EN), .SET(SET), .EN_work(EN_work), .EN_set(EN_set), .print1(PrintB), .max2(Maxh), .max1(Maxl), .ten(bot_max2), .one(bot_max1), .mode1(mode_light1), .mode2(mode_light2), .seqH(bot_seq_H), .seqL(bot_seq_L), .now2(bot_high), .now1(bot_low), .out6(light6), .out5(light5), .out4(light4), .out3(light3), .out2(light2)); // 
 Music u7 (.CLK(CLK_org), .CLK_1(CLK_Music), .allFull(allFull), .Music(Speaker));

@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 17.000 ns
+Actual Time    : 26.000 ns
 From           : isWork
-To             : MOD_MAX:u4|ones[1]
+To             : MOD_MAX:u3|ones[2]
 From Clock     : --
 To Clock       : CLK_org
 Failed Paths   : 0
@@ -15,8 +15,8 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 33.000 ns
-From           : light_1:u5|light2[3]
+Actual Time    : 24.000 ns
+From           : light_1:u4|light2[3]
 To             : light6_D
 From Clock     : CLK_org
 To Clock       : --
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 13.000 ns
+Actual Time    : 4.000 ns
 From           : EN_set
-To             : light_1:u5|light[0]
+To             : light_1:u4|light[0]
 From Clock     : --
 To Clock       : CLK_org
 Failed Paths   : 0
@@ -45,9 +45,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'CLK_org'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 18.87 MHz ( period = 53.000 ns )
-From           : MOD_MAX:u4|tens[3]
-To             : MOD_MAX:u4|ones[1]
+Actual Time    : 25.00 MHz ( period = 40.000 ns )
+From           : MOD_MAX:u3|tens[3]
+To             : MOD_MAX:u3|ones[2]
 From Clock     : CLK_org
 To Clock       : CLK_org
 Failed Paths   : 0
@@ -56,8 +56,8 @@ Type           : Clock Setup: 'CLK_Music'
 Slack          : N/A
 Required Time  : None
 Actual Time    : 47.62 MHz ( period = 21.000 ns )
-From           : Music:u12|lpm_counter:counter_rtl_1|dffs[6]
-To             : Music:u12|Music
+From           : Music:u7|lpm_counter:counter_rtl_1|dffs[6]
+To             : Music:u7|Music
 From Clock     : CLK_Music
 To Clock       : CLK_Music
 Failed Paths   : 0
