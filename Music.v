@@ -1,6 +1,6 @@
 module Music (
     input wire CLK,        // 主时钟信号 (1 Hz)
-    input wire CLK_1,      // 音频时钟信号 (假设为 100 kHz)
+    input wire CLK_1,      // 音频时钟信号 (100 kHz)
     input wire allFull,    // 全满信号
     output reg Music       // 输出警报信号
 );
