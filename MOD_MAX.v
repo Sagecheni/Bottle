@@ -7,7 +7,7 @@ module MOD_MAX (
     input wire set,           // 工作状态下，连续计数/间隔计数
     input wire [3:0] maxL,    // 药瓶容量的个位部分
     input wire [3:0] maxH,    // 药瓶容量的十位部分
-    input wire [3:0] nowL,    // 当前药片数量的个位
+    input wire [3:0] nowL,    // 当前药片数量的个位ni
     input wire [3:0] nowH,    // 当前药片数量的十位
     input wire [3:0] bot_maxL,    // 药瓶总数的个位部分
     input wire [3:0] bot_maxH,    // 药瓶总数的十位部分
@@ -42,7 +42,7 @@ module MOD_MAX (
         end
         conti_last <= conti; // 更新上一个时钟周期的 conti 信号
 
-        if (EN_work && EN_set && !set) begin
+        if (EN_work && EN_set) begin
             // 复位计数器
             ones <= 4'b0000;
             tens <= 4'b0000;
@@ -50,7 +50,7 @@ module MOD_MAX (
             start_seq_H <= 4'b0000;
             allFull <= 0;
             stop <= 0;
-        end else if (isWork && !stop) begin
+        end else if (isWork && !stop ) begin
             if (start_seq_L == bot_maxL  && start_seq_H == bot_maxH && ones == 0 && tens == 0) begin
                 // 如果已经装满所有瓶子，触发全满信号并停止
                 allFull <= 1'b1;

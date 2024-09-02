@@ -50,3 +50,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - 为了使得全满信号得以同步，将MOD_MAX,full,all_slice三个模块于以合并，并修正部分计数错误逻辑。
 
 
+## [5.0.0] - 2024-09-02
+
+### Changed
+- 修正了SET=1下无法清零计数的问题。
