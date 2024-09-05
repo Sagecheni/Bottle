@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Bottle
-Mon Sep 02 21:27:52 2024
+Thu Sep 05 11:27:13 2024
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -47,12 +47,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Sep 02 21:27:52 2024    ;
+; Analysis & Synthesis Status ; Successful - Thu Sep 05 11:27:13 2024    ;
 ; Quartus II Version          ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; Bottle                                   ;
 ; Top-level Entity Name       ; Bottle                                   ;
 ; Family                      ; MAX7000S                                 ;
-; Total macrocells            ; 110                                      ;
+; Total macrocells            ; 101                                      ;
 ; Total pins                  ; 45                                       ;
 +-----------------------------+------------------------------------------+
 
@@ -159,15 +159,15 @@ applicable agreement for further details.
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 110                  ;
-; Total registers      ; 68                   ;
+; Logic cells          ; 101                  ;
+; Total registers      ; 64                   ;
 ; I/O pins             ; 45                   ;
-; Shareable expanders  ; 27                   ;
-; Parallel expanders   ; 10                   ;
+; Shareable expanders  ; 29                   ;
+; Parallel expanders   ; 9                    ;
 ; Maximum fan-out node ; CLK_org              ;
-; Maximum fan-out      ; 75                   ;
-; Total fan-out        ; 913                  ;
-; Average fan-out      ; 5.02                 ;
+; Maximum fan-out      ; 71                   ;
+; Total fan-out        ; 804                  ;
+; Average fan-out      ; 4.59                 ;
 +----------------------+----------------------+
 
 
@@ -176,13 +176,13 @@ applicable agreement for further details.
 +---------------------------------------+------------+------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node            ; Macrocells ; Pins ; Full Hierarchy Name                              ; Library Name ;
 +---------------------------------------+------------+------+--------------------------------------------------+--------------+
-; |Bottle                               ; 110        ; 45   ; |Bottle                                          ; work         ;
-;    |MOD_MAX:u3|                       ; 50         ; 0    ; |Bottle|MOD_MAX:u3                               ; work         ;
+; |Bottle                               ; 101        ; 45   ; |Bottle                                          ; work         ;
+;    |MOD_MAX:u3|                       ; 48         ; 0    ; |Bottle|MOD_MAX:u3                               ; work         ;
 ;       |lpm_counter:start_seq_H_rtl_0| ; 4          ; 0    ; |Bottle|MOD_MAX:u3|lpm_counter:start_seq_H_rtl_0 ; work         ;
 ;    |Music:u7|                         ; 10         ; 0    ; |Bottle|Music:u7                                 ; work         ;
 ;       |lpm_counter:counter_rtl_1|     ; 8          ; 0    ; |Bottle|Music:u7|lpm_counter:counter_rtl_1       ; work         ;
-;    |light_1:u4|                       ; 7          ; 0    ; |Bottle|light_1:u4                               ; work         ;
-;    |page:u6|                          ; 20         ; 0    ; |Bottle|page:u6                                  ; work         ;
+;    |light_1:u4|                       ; 3          ; 0    ; |Bottle|light_1:u4                               ; work         ;
+;    |page:u6|                          ; 16         ; 0    ; |Bottle|page:u6                                  ; work         ;
 ;    |set_MAX:u1|                       ; 8          ; 0    ; |Bottle|set_MAX:u1                               ; work         ;
 ;    |set_MAX:u2|                       ; 8          ; 0    ; |Bottle|set_MAX:u2                               ; work         ;
 +---------------------------------------+------------+------+--------------------------------------------------+--------------+
@@ -326,7 +326,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon Sep 02 21:27:44 2024
+    Info: Processing started: Thu Sep 05 11:27:07 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Bottle -c Bottle
 Info: Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info: Found 1 design units, including 1 entities, in source file music.v
@@ -355,46 +355,44 @@ Warning (10230): Verilog HDL assignment warning at MOD_MAX.v(81): truncated valu
 Info: Elaborating entity "light_1" for hierarchy "light_1:u4"
 Info: Elaborating entity "BCD_7" for hierarchy "BCD_7:u5"
 Info: Elaborating entity "page" for hierarchy "page:u6"
-Warning (10235): Verilog HDL Always Construct warning at page.v(31): variable "EN" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(32): variable "mode1" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(34): variable "mode2" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(38): variable "print1" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(40): variable "EN_work" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(40): variable "EN_set" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(42): variable "SET" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(43): variable "ten" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(28): variable "mode1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(31): variable "print1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(33): variable "EN_work" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(33): variable "EN_set" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(35): variable "SET" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(36): variable "ten" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(36): variable "one" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(38): variable "max2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(38): variable "max1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(42): variable "ten" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at page.v(43): variable "one" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(45): variable "max2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(44): variable "max2" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at page.v(45): variable "max1" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(49): variable "ten" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(50): variable "one" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(51): variable "max2" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(52): variable "max1" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(54): variable "print1" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(56): variable "seqH" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(57): variable "seqL" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(58): variable "now2" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at page.v(59): variable "now1" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10240): Verilog HDL Always Construct warning at page.v(29): inferring latch(es) for variable "Y5", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at page.v(29): inferring latch(es) for variable "Y4", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at page.v(29): inferring latch(es) for variable "Y3", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at page.v(29): inferring latch(es) for variable "Y2", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "Y2[0]" at page.v(29)
-Info (10041): Inferred latch for "Y2[1]" at page.v(29)
-Info (10041): Inferred latch for "Y2[2]" at page.v(29)
-Info (10041): Inferred latch for "Y2[3]" at page.v(29)
-Info (10041): Inferred latch for "Y3[0]" at page.v(29)
-Info (10041): Inferred latch for "Y3[1]" at page.v(29)
-Info (10041): Inferred latch for "Y3[2]" at page.v(29)
-Info (10041): Inferred latch for "Y3[3]" at page.v(29)
-Info (10041): Inferred latch for "Y4[0]" at page.v(29)
-Info (10041): Inferred latch for "Y4[1]" at page.v(29)
-Info (10041): Inferred latch for "Y4[2]" at page.v(29)
-Info (10041): Inferred latch for "Y4[3]" at page.v(29)
-Info (10041): Inferred latch for "Y5[0]" at page.v(29)
-Info (10041): Inferred latch for "Y5[1]" at page.v(29)
-Info (10041): Inferred latch for "Y5[2]" at page.v(29)
-Info (10041): Inferred latch for "Y5[3]" at page.v(29)
+Warning (10235): Verilog HDL Always Construct warning at page.v(47): variable "print1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(49): variable "seqH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(50): variable "seqL" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(51): variable "now2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at page.v(52): variable "now1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at page.v(27): inferring latch(es) for variable "Y5", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at page.v(27): inferring latch(es) for variable "Y4", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at page.v(27): inferring latch(es) for variable "Y3", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at page.v(27): inferring latch(es) for variable "Y2", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "Y2[0]" at page.v(27)
+Info (10041): Inferred latch for "Y2[1]" at page.v(27)
+Info (10041): Inferred latch for "Y2[2]" at page.v(27)
+Info (10041): Inferred latch for "Y2[3]" at page.v(27)
+Info (10041): Inferred latch for "Y3[0]" at page.v(27)
+Info (10041): Inferred latch for "Y3[1]" at page.v(27)
+Info (10041): Inferred latch for "Y3[2]" at page.v(27)
+Info (10041): Inferred latch for "Y3[3]" at page.v(27)
+Info (10041): Inferred latch for "Y4[0]" at page.v(27)
+Info (10041): Inferred latch for "Y4[1]" at page.v(27)
+Info (10041): Inferred latch for "Y4[2]" at page.v(27)
+Info (10041): Inferred latch for "Y4[3]" at page.v(27)
+Info (10041): Inferred latch for "Y5[0]" at page.v(27)
+Info (10041): Inferred latch for "Y5[1]" at page.v(27)
+Info (10041): Inferred latch for "Y5[2]" at page.v(27)
+Info (10041): Inferred latch for "Y5[3]" at page.v(27)
 Info: Elaborating entity "Music" for hierarchy "Music:u7"
 Warning (10230): Verilog HDL assignment warning at Music.v(24): truncated value with size 32 to match size of target (8)
 Warning: LATCH primitive "page:u6|Y2[1]" is permanently enabled
@@ -445,17 +443,20 @@ Info: Elaborated megafunction instantiation "MOD_MAX:u3|lpm_add_sub:Add3|altshif
 Info: Ignored 3 buffer(s)
     Info: Ignored 3 SOFT buffer(s)
 Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "light6_D" is stuck at GND
     Warning (13410): Pin "light1_b" is stuck at VCC
     Warning (13410): Pin "light1_f" is stuck at GND
-Info: Implemented 182 device resources after synthesis - the final resource count might be different
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "mode_EN"
+Info: Implemented 175 device resources after synthesis - the final resource count might be different
     Info: Implemented 17 input pins
     Info: Implemented 28 output pins
-    Info: Implemented 110 macrocells
-    Info: Implemented 27 shareable expanders
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 50 warnings
+    Info: Implemented 101 macrocells
+    Info: Implemented 29 shareable expanders
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 51 warnings
     Info: Peak virtual memory: 235 megabytes
-    Info: Processing ended: Mon Sep 02 21:27:52 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Thu Sep 05 11:27:13 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:02
 
 

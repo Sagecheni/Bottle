@@ -90,8 +90,7 @@ light_1 u4 (
     .EN_set(EN_set), 
     .SET(SET), 
     .allFull(allFull), 
-    .light(mode_light1), 
-    .light2(mode_light2)
+    .light(mode_light1)
 );
 
 // 数码管显示控制
@@ -109,7 +108,6 @@ BCD_7 u5 (
 // 显示页面的控制
 page u6 (
     .CLK(CLK_org), 
-    .EN(mode_EN), 
     .SET(SET), 
     .EN_work(EN_work), 
     .EN_set(EN_set), 
@@ -119,7 +117,6 @@ page u6 (
     .ten(bot_max2), 
     .one(bot_max1), 
     .mode1(mode_light1), 
-    .mode2(mode_light2), 
     .seqH(bot_seq_H), 
     .seqL(bot_seq_L), 
     .now2(bot_high), 

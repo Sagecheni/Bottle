@@ -1,9 +1,9 @@
-Fitter Status : Successful - Mon Sep 02 21:27:55 2024
+Fitter Status : Successful - Thu Sep 05 11:27:15 2024
 Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : Bottle
 Top-level Entity Name : Bottle
 Family : MAX7000S
 Device : EPM7128SLC84-15
 Timing Models : Final
-Total macrocells : 110 / 128 ( 86 % )
+Total macrocells : 101 / 128 ( 79 % )
 Total pins : 49 / 68 ( 72 % )

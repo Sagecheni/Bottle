@@ -1,6 +1,5 @@
 module page (
     input wire CLK,            // 时钟信号
-    input wire EN,             // 显示模式控制信号：EN = 0 时数码管显示模式，EN = 1 时交通灯显示模式
     input wire SET,            // 设置模式信号，用于控制显示内容在设置模式下的闪烁
     input wire EN_work,        // 工作模式使能信号
     input wire EN_set,         // 设置模式使能信号
@@ -10,7 +9,6 @@ module page (
     input wire [3:0] ten,      // 瓶子数目最大值高位
     input wire [3:0] one,      // 瓶子数目最大值低位
     input wire [3:0] mode1,    // 模式1下的显示值
-    input wire [3:0] mode2,    // 模式2下的显示值
     input wire [3:0] seqH,     // 装满的瓶子数目的高位
     input wire [3:0] seqL,     // 装满的瓶子数目的高位
     input wire [3:0] now2,     // 当前瓶子中的药片数目的高位
@@ -27,12 +25,7 @@ module page (
 
     // 基于时钟信号的上升沿，更新显示内容
     always @(CLK) begin
-        // 根据 EN 信号选择数码管模式/交通灯模式
-        if (EN == 1'b0) begin
-            Y6 <= mode1;  // 数码管模式
-        end else begin
-            Y6 <= mode2;  // 交通灯模式
-        end
+        Y6 <= mode1;  // 数码管模式
 
         // 根据 print1 信号选择显示第1页还是第2页
         if (print1 == 1'b0) begin
